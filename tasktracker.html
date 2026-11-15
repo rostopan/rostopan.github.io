@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+    <title>Task tracker</title>
+</head>
+<body>
+	<center>
+	<h1>~~~ Task tracker ~~~</h1>	
+		<div class="input-container">
+			<span>Add a requirement: </span>
+			<input id="date" type="date">
+			<select id="subject">
+			    <option>Math2A</option>
+			    <option>Math2B</option>
+			    <option>Biology</option>
+			    <option>Chemistry</option>
+			    <option>ES</option>
+			    <option>Physics</option>
+				<option>CompSci</option>
+				<option>English</option>
+				<option>Filipino</option>
+				<option>SocSci</option>
+				<option>ADTech</option>
+				<option>ValEd</option>
+				<option>PE</option>
+				<option>Health</option>
+				<option>Music</option>
+				<option>ClubA</option>
+				<option>ClubB</option>
+				<option>Homeroom</option>
+		    </select>
+		    <input id="type" type="text" placeholder="Type of requirement">
+		    <input id="notes" type="text" placeholder="Coverage / Other notes">
+		    <button id="submit" type="button">Submit</button>
+		</div>
+    </center><br>
+    <div>
+	   	<table id="table">
+			<tr id="tableHeader">
+				<th>Date / Deadline</th>
+				<th style="width: 75%;">Assessments / Requirements</th>
+			</tr>
+		</table><br>
+    </div>
+    <center><div class="input-container">
+			<span>There are </span>
+			<span id="notStarted">0</span>
+			<span> unstarted, </span>
+			<span id="inProgress">0</span>
+			<span> in progress, and </span>
+			<span id="done">0</span>
+			<span> done requirements</span>
+	</div></center>
+    <center>
+    	<p>All dates are in YYYY-MM-DD (for now).</p>
+    	<p>Made by Rostopan (a nickname) for his english 2 project :)</p>
+    </center>
+	<script src="./scripts.js"></script>
+</body>
+</html>
