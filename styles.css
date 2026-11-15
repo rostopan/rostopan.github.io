@@ -1,0 +1,99 @@
+body {
+	font-family: Tahoma;
+	background-image: url("./paper.gif"); /* thx w3schools */
+}
+table {
+	margin: auto;
+	table-layout: fixed;
+	box-shadow: 5px 5px 10px #AAA;
+}
+table, th, td {
+	border: 1px solid #555;
+	border-collapse: collapse;
+	overflow-wrap: break-word;
+}
+th, td {
+	padding: 10px;
+	vertical-align: top;
+}
+th {
+	margin: 0px
+	width: 25%;
+}
+tr:nth-child(odd) {
+	background-color: #FFF;
+}
+tr:nth-child(even) {
+	background-color: #EEE;
+}
+input, select, button, textarea {
+	font-family: Tahoma;
+	border: 1px solid #555;
+	border-radius: 2px;
+}
+button:hover {
+	background-color: #FFF;
+}
+textarea {
+	width: 100%;
+}
+div {
+	overflow-wrap: break-word;
+}
+.input-container {
+	display: inline-block;
+	background-color: #EEE;
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 8px;
+	box-shadow: 5px 5px 10px #AAA;
+}
+.Math2A, .Math2B, .Biology, .Chemistry, .ES, .Physics, .CompSci, .English, .Filipino, .SocSci, .ADTech, .ValEd, .PE, .Health, .Music {
+	padding: 2px;
+}
+.Math2A {
+	background-color: #a4c2f4;
+}
+.Math2B {
+	background-color: #9fc5e8;
+}
+.Biology {
+	background-color: #93c47d;
+}
+.Chemistry {
+	background-color: #a2c4c9;
+}
+.ES {
+	background-color: #d5a6bd;
+}
+.Physics {
+	background-color: #b4a7d6;
+}
+.CompSci {
+	background-color: #ffe599;
+}
+.English {
+	background-color: #ea9999;
+}
+.Filipino {
+	background-color: #b6d7a8;
+}
+.SocSci {
+	background-color: #f9cb9c;
+}
+.ADTech {
+	background-color: #6d9eeb;
+}
+.ValEd {
+	background-color: #f6b26b;
+}
+.PE, .Health, .Music {
+	background-color: #c27ba0;
+}
+.ClubA, .ClubB {
+	background-color: #d9d9d9;
+}
+.Homeroom {
+	background-color: #999999;
+	color: white;
+}
