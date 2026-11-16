@@ -13,6 +13,7 @@ countreqs();
 
 submit.addEventListener("click", (event) => {
 	const dateValue = date.value;
+	const dateValueLocal = new Date(dateValue).toLocaleDateString('en-US')
 	const subjectValue = subject.value;
 	const typeValue = type.value;
 	const notesValue = notes.value;
@@ -32,7 +33,7 @@ submit.addEventListener("click", (event) => {
 		const rowCode =`
 		<tr>
 			<th>
-				<p>${dateValue}</p>
+				<p>${dateValueLocal}</p>
 				<textarea size="10" placeholder="Add extra notes here..."></textarea><br><button type="button" class="delete" onclick="this.closest('tr').remove()">Delete</button><button type="button" class="rowUp">↑</button><button type="button" class="rowDown">↓</button>
 			</th>
 			<td id="${dateValue}">
@@ -102,12 +103,3 @@ function countreqs() {
 	document.getElementById("inProgress").innerHTML = inProgress;
 	document.getElementById("done").innerHTML = done;
 }
-
-/* 
-to-do:
-	use a different background and stylize it
-	stylize too each option selector
-	allow text wrapping when the table gets too wide
-	format the dates into any MM-DD-YYYY format
-	save the information onto the client
-*/
