@@ -10,7 +10,7 @@ const tableHeaderTbody = tableHeader.closest('tbody')
 let statusArray = Array.from(statusElements);
 let reqs = JSON.parse(localStorage.getItem("reqs"));
 let reqCode
-if (reqs[reqs.length-1]) {
+if (reqs[reqs.length-1] != null) {
 	reqCode = reqs[reqs.length-1][0]+1;
 } else {
 	reqCode = 0
