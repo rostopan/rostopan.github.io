@@ -8,6 +8,9 @@ const table = document.getElementById("table");
 const tableHeader = document.getElementById("tableHeader");
 const tableHeaderTbody = tableHeader.closest('tbody')
 let statusArray = Array.from(statusElements);
+if (Boolean(localStorage.getItem("reqs")) === false) {
+	localStorage.setItem("reqs", "[]")
+};
 let reqs = JSON.parse(localStorage.getItem("reqs"));
 let reqCode
 if (reqs.length !== 0) {
