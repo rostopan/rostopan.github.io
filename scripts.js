@@ -12,13 +12,14 @@ let reqs = JSON.parse(localStorage.getItem("reqs"));
 let reqCode
 if (Boolean(reqs)) {
 	reqCode = reqs[reqs.length-1][0]+1;
+	reqs.forEach((req) => {
+		add(req[0], req[1], req[2], req[3], req[4], req[5])
+	});
 } else {
 	reqCode = 0
 };
 
-reqs.forEach((req) => {
-	add(req[0], req[1], req[2], req[3], req[4], req[5])
-});
+
 
 countreqs();
 
