@@ -10,7 +10,7 @@ const tableHeaderTbody = tableHeader.closest('tbody')
 let statusArray = Array.from(statusElements);
 let reqs = JSON.parse(localStorage.getItem("reqs"));
 let reqCode
-if (Boolean(reqs)) {
+if (reqs.length !== 0) {
 	reqCode = reqs[reqs.length-1][0]+1;
 	reqs.forEach((req) => {
 		add(req[0], req[1], req[2], req[3], req[4], req[5])
@@ -18,9 +18,6 @@ if (Boolean(reqs)) {
 } else {
 	reqCode = 0
 };
-
-
-
 countreqs();
 
 function add(reqId, reqDate, reqStatus, reqSubject, reqType, reqNotes) {
