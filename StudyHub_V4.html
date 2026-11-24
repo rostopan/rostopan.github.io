@@ -1,0 +1,1104 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>S.H.I.N.E. StudyHub V4</title>
+<style>
+:root{--bg:#f3f6fb;--ink:#192743;--muted:#71809a;--blue:#356df3;--aqua:#46d7c8;--gold:#f4bd4f;--line:#e3e9f2;--white:#fff}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,system-ui,Segoe UI,sans-serif;color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{display:grid;grid-template-columns:220px 1fr;min-height:100vh}.side{background:#14233f;color:#fff;padding:24px 15px;position:relative;z-index:5}.brand{display:flex;align-items:center;gap:10px;padding:0 8px 26px}.logo{display:grid;place-items:center;width:39px;height:39px;border-radius:13px;background:linear-gradient(135deg,var(--blue),var(--aqua));font-weight:900}.brand strong{font-size:17px}.brand small{display:block;color:#a9bad3;font-size:10px}.navlabel{font-size:10px;letter-spacing:1.5px;color:#91a2bd;padding:0 12px;margin-bottom:8px}.nav button{display:flex;gap:12px;align-items:center;width:100%;padding:12px;border:0;border-radius:10px;background:none;color:#c8d3e7;text-align:left;margin:3px 0;font-size:12px}.nav button.active,.nav button:hover{background:#263958;color:white}.sidehint{margin-top:45px;background:#1e304f;padding:14px;border-radius:13px;color:#c4d1e5;font-size:11px;line-height:1.5}.sidehint b{color:#fff;display:block;margin-bottom:5px}.main{padding:28px clamp(15px,3vw,40px);min-width:0}.top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:23px}.eyebrow{font-size:10px;font-weight:850;letter-spacing:1.6px;color:var(--blue)}h1{font-size:27px;letter-spacing:-.7px;margin:5px 0 0}.btn{border:0;border-radius:10px;padding:11px 14px;font-weight:800;font-size:12px}.primary{background:var(--blue);color:white}.light{background:#edf2ff;color:var(--blue)}.panel,.stat,.hero{background:white;border:1px solid var(--line);border-radius:17px;box-shadow:0 8px 26px #18365d0b}.panel{padding:19px;margin-bottom:16px}.panelhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.panelhead h2{font-size:15px;margin:0}.panelhead p{font-size:11px;color:var(--muted);margin:5px 0 0}.hero{background:linear-gradient(115deg,#192b50,#24568b 70%,#168d96);color:white;padding:25px;margin-bottom:17px;display:flex;align-items:center;justify-content:space-between;gap:20px}.hero h2{font-size:22px;margin:8px 0}.hero p{font-size:12px;color:#d5e5f8;line-height:1.6;max-width:510px;margin:0}.hero .btn{background:var(--gold);color:#2c2a20;white-space:nowrap}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:17px}.stat{padding:16px}.stat label{font-size:11px;color:var(--muted)}.stat strong{display:block;font-size:27px;margin:9px 0 3px}.stat small{font-size:10px;color:var(--muted)}.cols{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;align-items:start}.subject-list,.duelist{display:flex;flex-direction:column;gap:12px}.subjectrow{display:grid;grid-template-columns:35px 1fr auto;gap:10px;align-items:center}.subicon{background:#eff4ff;border-radius:10px;width:35px;height:35px;display:grid;place-items:center}.subname{font-size:12px;font-weight:800}.muted{font-size:10px;color:var(--muted);margin-top:4px}.progress{height:7px;border-radius:99px;background:#edf1f7;overflow:hidden;margin-top:9px}.progress span{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--aqua))}.due{display:flex;gap:10px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:10px}.datebox{min-width:42px;text-align:center;background:#f0f4ff;border-radius:9px;padding:7px 2px}.datebox b{display:block;font-size:15px}.datebox small{font-size:9px;color:var(--muted)}.duetext{flex:1;min-width:0}.duetext b{font-size:11px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.duetext small{display:block;font-size:10px;color:var(--muted);margin-top:4px}.tag{background:#eaf0ff;color:#3159b8;border-radius:99px;padding:4px 7px;font-size:9px;font-weight:800}.tag.done{background:#e2f8ef;color:#167e61}.view{display:none}.view.active{display:block}.empty{text-align:center;padding:22px;color:var(--muted);font-size:12px}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.filters input,.filters select{border:1px solid var(--line);background:#fff;border-radius:9px;padding:9px;font-size:11px}.tablewrap{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:780px}th{text-align:left;color:var(--muted);font-size:10px;text-transform:uppercase;padding:10px;border-bottom:1px solid var(--line)}td{font-size:11px;padding:12px 10px;border-bottom:1px solid #edf0f5}td b{font-size:11px}.mini{border:0;border-radius:7px;padding:6px 8px;background:#edf2ff;color:var(--blue);font-size:10px;font-weight:800}.mini.del{background:#fff0f0;color:#bb3c4b}.subjectgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}.subjectcard{background:#fff;text-align:left;border:1px solid var(--line);border-radius:13px;padding:14px;min-width:0;transition:.15s}.subjectcard:hover,.subjectcard.selected{border-color:var(--blue);box-shadow:0 0 0 3px #356df315}.subjectcard h3{font-size:12px;margin:0 0 11px;min-height:29px}.subjectcard .pct{font-size:10px;color:var(--muted)}.pair{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px}.pair small{display:block;font-size:9px;color:var(--muted)}.pair b{display:block;font-size:17px;margin-top:4px}.targethint{font-size:10px;color:var(--blue);font-weight:800;margin-top:10px}.targetselect{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:17px}.targetselect label{font-size:12px;font-weight:800}.targetselect select{border:1px solid var(--line);border-radius:9px;padding:9px;background:white}.targetlayout{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}.donutrow{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}.donut{width:145px;height:145px;border-radius:50%;display:grid;place-items:center;position:relative}.donut:after{content:"";position:absolute;inset:13px;border-radius:50%;background:white}.donutcenter{z-index:1;text-align:center}.donutcenter b{display:block;font-size:24px}.donutcenter small{font-size:9px;color:var(--muted)}.legend{font-size:10px;display:flex;flex-direction:column;gap:10px}.legend span{display:flex;gap:7px;align-items:center}.swatch{width:9px;height:9px;border-radius:3px;display:inline-block}.reportbox{background:#f5f8fc;border-radius:12px;padding:14px;margin-bottom:10px}.reportbox b{font-size:12px}.reportbox p{font-size:11px;color:var(--muted);line-height:1.6;margin:6px 0 0}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.metric{padding:11px;background:#f5f8fc;border-radius:10px}.metric small{font-size:9px;color:var(--muted)}.metric b{display:block;font-size:17px;margin-top:5px}.note{font-size:10px;line-height:1.6;color:var(--muted)}.calendarcontrols{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.calendarcontrols strong{font-size:12px;min-width:110px;text-align:center}.weekdays,.calgrid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.weekdays{margin-bottom:6px}.weekdays span{text-align:center;font-size:10px;font-weight:800;color:var(--muted);padding:7px 0}.calday{min-height:90px;border:1px solid var(--line);background:white;border-radius:9px;padding:6px;cursor:pointer;text-align:left;overflow:hidden;min-width:0}.calday:hover,.calday.selected{border-color:var(--blue);box-shadow:0 0 0 2px #356df315}.calday.other{opacity:.4}.calday.today{background:#f0f5ff;border-color:#91aefc}.daynum{font-size:11px;font-weight:850;display:block;margin-bottom:5px}.event{font-size:9px;padding:4px;border-radius:5px;background:#eaf0ff;color:#3159b8;margin:3px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.event.completed{background:#e3f8f0;color:#167e61}.event.more{background:#f0f2f6;color:#66748a}.legendline{display:flex;gap:15px;flex-wrap:wrap;margin-top:12px;font-size:10px;color:var(--muted)}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}.modalbg{display:none;position:fixed;inset:0;background:#101d37aa;z-index:50;align-items:center;justify-content:center;padding:15px}.modalbg.show{display:flex}.modal{background:white;border-radius:18px;padding:22px;width:min(550px,100%);max-height:90vh;overflow:auto}.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.modalhead h2{font-size:18px;margin:0}.close{border:0;background:#f0f3f8;border-radius:8px;width:31px;height:31px;font-size:18px}.checkline{display:flex;align-items:center;gap:10px;font-weight:650}.checkline input{width:18px;height:18px;accent-color:var(--accent)}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:10px;font-weight:800;color:#52617a}.field input,.field select,.field textarea{width:100%;border:1px solid #dfe6f0;border-radius:9px;padding:10px;font-size:12px;background:white}.field textarea{min-height:60px}.actions{display:flex;justify-content:flex-end;gap:8px;margin-top:17px}.toast{display:none;position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#14233f;color:#fff;border-radius:10px;padding:12px 16px;font-size:12px;z-index:9}
+.focusgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.focusgrid .reportbox{margin:0}
+.weekcalendar{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:7px;overflow-x:auto}
+.weekcol{min-width:105px;background:#f8faff;border:1px solid var(--line);border-radius:11px;padding:8px}
+.weekcolhead{font-size:11px;font-weight:850;margin-bottom:8px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+.weekcolhead small{display:block;color:var(--muted);font-weight:500;margin-top:3px}
+.weekevent{background:white;border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:8px;padding:8px;margin:6px 0;cursor:pointer;overflow-wrap:anywhere}
+.weekevent.completed{border-left-color:#28a883;opacity:.8}.weekevent b{display:block;font-size:10px;line-height:1.35}.weekevent small{display:block;font-size:9px;color:var(--muted);margin-top:5px;line-height:1.4}
+.typepill{display:inline-block;font-size:9px;font-weight:800;background:#eef3ff;color:#3159b8;border-radius:6px;padding:3px 5px;margin-top:4px}
+@media(max-width:700px){.focusgrid{grid-template-columns:1fr}.weekcalendar{grid-template-columns:repeat(7,minmax(115px,1fr))}}
+.toast.show{display:block}
+@media(max-width:950px){.app{grid-template-columns:68px 1fr}.side{padding:20px 8px}.brand{justify-content:center;padding:0 0 24px}.brandtxt,.navlabel,.navtext,.sidehint{display:none}.nav button{justify-content:center;padding:13px 5px}.stats{grid-template-columns:repeat(2,1fr)}.cols{grid-template-columns:1fr}.subjectgrid{grid-template-columns:repeat(2,1fr)}.targetlayout{grid-template-columns:1fr}}
+@media(max-width:560px){.main{padding:17px 11px}.top{align-items:flex-start}h1{font-size:22px}.top>.btn{font-size:10px;padding:10px}.hero{padding:19px;align-items:flex-start;flex-direction:column}.hero h2{font-size:19px}.stats{gap:9px}.stat{padding:12px}.stat strong{font-size:23px}.panel{padding:14px}.subjectgrid{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.calday{min-height:56px;padding:3px;border-radius:6px}.weekdays,.calgrid{gap:3px}.daynum{font-size:10px;margin-bottom:2px}.event{font-size:7px;padding:2px}.calendarcontrols{width:100%}.calendarcontrols strong{flex:1}.metrics{grid-template-columns:1fr 1fr}}
+
+/* v2.3 timetable and calendar polish */
+.calendarcontrols{gap:6px}.calendarcontrols .btn{padding:9px 11px}.weekcalendar{display:block;overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:13px;padding:10px}.timeline{min-width:850px;display:grid;grid-template-columns:58px repeat(7,minmax(105px,1fr));position:relative}.timeline.daymode{min-width:520px;grid-template-columns:62px minmax(300px,1fr)}.daytimeline{min-width:0}.timehead{height:43px;border-bottom:1px solid var(--line);font-size:10px;color:var(--muted);font-weight:800;padding:10px 5px;text-align:center}.timeaxis{position:relative}.timeaxis .hourlabel{height:64px;position:relative;top:-7px;text-align:right;padding-right:9px;font-size:10px;color:#8290a5}.timecol{position:relative;height:896px;border-left:1px solid var(--line);background:repeating-linear-gradient(to bottom,transparent 0,transparent 63px,#e8edf5 63px,#e8edf5 64px)}.timecol.todaycol{background-color:#f8fbff}.timeevent{position:absolute;left:4px;right:4px;min-height:27px;border-radius:7px;padding:5px 6px;overflow:hidden;background:#eaf0ff;border-left:3px solid var(--blue);color:#244b9b;font-size:9px;z-index:2;cursor:pointer;box-shadow:0 2px 6px #19365d0c}.timeevent b{display:block;font-size:10px;line-height:1.25}.timeevent small{display:block;font-size:9px;margin-top:3px;opacity:.8}.timeevent.schedule{background:#e6f8f5;border-left-color:#20a897;color:#126d65}.timeevent.completed{background:#e3f8f0;border-left-color:#28a883;color:#167e61}.timeevent.eventitem{background:#fff4dc;border-left-color:#e0a52e;color:#80540b}.timeevent.holiday{background:#f2eaff;border-left-color:#9864cf;color:#65409a}.nowline{position:absolute;left:0;right:0;height:2px;background:#e34d62;z-index:5;pointer-events:none}.nowline:before{content:'';position:absolute;left:-4px;top:-3px;width:8px;height:8px;border-radius:50%;background:#e34d62}.nowlabel{position:absolute;left:3px;top:-15px;font-size:9px;font-weight:900;color:#d63d55;background:white;padding:1px 4px;border-radius:4px}.alldayrow{display:grid;grid-template-columns:58px repeat(7,minmax(105px,1fr));gap:0;margin-bottom:8px;min-width:850px}.alldayrow.daymode{grid-template-columns:62px minmax(300px,1fr);min-width:520px}.alldaylabel{font-size:9px;color:var(--muted);padding:8px 4px;text-align:right}.alldaycell{padding:4px;border-left:1px solid var(--line);min-height:30px}.alldaychip{display:block;border-radius:6px;padding:5px;font-size:9px;font-weight:800;background:#f2eaff;color:#65409a;margin:2px 0}.alldaychip.eventchip{background:#fff4dc;color:#80540b}.calendarhint{font-size:10px;color:var(--muted);margin:8px 2px 0}.weekdaypick{display:flex;gap:7px;flex-wrap:wrap}.weekdaypick label{display:flex;align-items:center;gap:4px;font-size:10px;background:#f2f5fa;border-radius:7px;padding:7px}.weekdaypick input{accent-color:var(--blue)}.field.hiddenfield{display:none}
+@media(max-width:700px){.calendarcontrols{justify-content:flex-start}.calendarcontrols strong{order:-1;width:100%;text-align:left}.weekcalendar{padding:6px}.timeevent{left:2px;right:2px;padding:4px;font-size:8px}.timeevent b{font-size:9px}}
+
+
+/* v2.4 themes */
+body[data-theme="dark"]{--bg:#101827;--ink:#e8eef9;--muted:#9aa9c0;--line:#2a3950;--white:#182438}body[data-theme="dark"] .panel,body[data-theme="dark"] .stat,body[data-theme="dark"] .calday,body[data-theme="dark"] .subjectcard,body[data-theme="dark"] .modal,body[data-theme="dark"] .due,body[data-theme="dark"] .weekcalendar{background:#182438;color:var(--ink);border-color:var(--line)}body[data-theme="dark"] .filters input,body[data-theme="dark"] .filters select,body[data-theme="dark"] .field input,body[data-theme="dark"] .field select,body[data-theme="dark"] .field textarea,body[data-theme="dark"] .targetselect select{background:#101827;color:var(--ink);border-color:var(--line)}body[data-theme="dark"] .timecol{background-color:#182438;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 63px,#344158 63px,#344158 64px)}body[data-theme="dark"] .timeevent,body[data-theme="dark"] .weekcol,body[data-theme="dark"] .reportbox,body[data-theme="dark"] .metric{background:#22324b;color:var(--ink)}body[data-theme="dark"] .timehead,body[data-theme="dark"] td{border-color:var(--line)}body[data-theme="dark"] .calday.today{background:#22395d}body[data-theme="dark"] .donut:after{background:#182438}
+body[data-theme="mint"]{--bg:#eef8f4;--blue:#168b70;--aqua:#65cdb0;--line:#d5e9df}body[data-theme="lavender"]{--bg:#f4f0fb;--blue:#7955c7;--aqua:#b49ae8;--line:#e5dcf2}body[data-theme="rose"]{--bg:#fff2f4;--blue:#c34f76;--aqua:#ee9eb6;--line:#f1dce3}body[data-theme="ocean"]{--bg:#edf6fb;--blue:#1677a8;--aqua:#54c5d5;--line:#d6e8f0}
+body[data-theme="mint"] .panel,body[data-theme="mint"] .stat,body[data-theme="mint"] .subjectcard,body[data-theme="mint"] .modal,body[data-theme="lavender"] .panel,body[data-theme="lavender"] .stat,body[data-theme="lavender"] .subjectcard,body[data-theme="lavender"] .modal,body[data-theme="rose"] .panel,body[data-theme="rose"] .stat,body[data-theme="rose"] .subjectcard,body[data-theme="rose"] .modal,body[data-theme="ocean"] .panel,body[data-theme="ocean"] .stat,body[data-theme="ocean"] .subjectcard,body[data-theme="ocean"] .modal{background:#fff}
+.themebar{display:flex;align-items:center;gap:7px;margin-left:auto;flex-shrink:0}.themebar label{font-size:10px;color:var(--muted);font-weight:800}.themebar select{border:1px solid var(--line);border-radius:9px;padding:8px;background:var(--white);color:var(--ink);font-size:11px}
+.daytools{display:flex;gap:7px;flex-wrap:wrap}.daytools .btn{padding:8px 10px}
+
+
+/* v2.4.2 calendar polish */
+.calday.weekend{background:linear-gradient(145deg,#fff1f4,#fff8fa);border-color:#f2c4d0}
+.calday.weekend.today{background:linear-gradient(145deg,#ffe5ec,#fff2f6);border-color:#e88da7}
+.calday.weekend .daynum{color:#c04468}
+.weekendcol{background:linear-gradient(180deg,#fff5f7,#fffafb)!important}
+.weekendday .timehead{background:#fff0f4;color:#b83e64}
+.timecol.weekendcol{border-left-color:#f0c4d0}
+.event{background:#e3edff;color:#1749a5;border:1px solid #c5d8ff;font-weight:750}
+.event.completed{background:#d9f8eb;color:#087a55;border-color:#a5e8ce}
+.event.more{background:#edf0f7;color:#52617a;border-color:#d7deeb}
+.event.wholelabel{background:transparent!important;border:0!important;border-radius:0!important;padding:5px 2px;margin:4px 0;text-align:center;font-size:10px;font-weight:900;letter-spacing:.025em;white-space:normal;line-height:1.25}
+.event.suspensionlabel{color:#c02655!important}
+.event.eventlabel{color:#a45b00!important}
+.alldaylabeltext{display:flex;align-items:center;justify-content:center;text-align:center;min-height:30px;padding:5px 3px;font-size:10px;font-weight:900;letter-spacing:.025em;line-height:1.25;cursor:pointer}
+.alldaylabeltext.suspensionlabel{color:#c02655}
+.alldaylabeltext.eventlabel{color:#a45b00}
+.alldaycell{background:linear-gradient(180deg,#fff9fb,#fff)}
+.calendarcontrols .btn.light{border-color:#c8d6ef;background:#f0f5ff;color:#244d91;font-weight:750}
+.calendarcontrols .btn.light:hover{background:#dce9ff;border-color:#8eafea}
+.legendline{font-weight:700}
+@media(prefers-reduced-motion:no-preference){.calday,.calendarcontrols .btn{transition:background .16s,border-color .16s,box-shadow .16s}}
+body[data-theme="dark"] .calday.weekend{background:linear-gradient(145deg,#342234,#2a2030);border-color:#69445f}
+body[data-theme="dark"] .weekendcol{background:linear-gradient(180deg,#2c2030,#211d2c)!important}
+body[data-theme="dark"] .weekendday .timehead{background:#392535;color:#ff9fbd}
+body[data-theme="dark"] .alldaycell{background:#211d2c}
+body[data-theme="dark"] .calendarcontrols .btn.light{background:#263b5c;color:#dbe9ff;border-color:#496b9b}
+
+
+/* v2.5 calendar + responsive navigation */
+.calday{min-height:112px;display:flex;flex-direction:column;align-items:stretch;gap:5px;padding:9px;background:var(--white);border:1px solid var(--line);border-radius:12px;position:relative}
+.calday.weekend{background:#fff5f7;border-color:#f3dbe2}
+.calday.weekend:nth-child(7n+1){background:#fff1f4}
+.calday .daynum{display:flex;align-items:center;justify-content:center;width:27px;height:27px;border-radius:50%;margin:0 auto 2px;font-size:12px}
+.calday.today .daynum{background:var(--blue);color:white}
+.calday.selected{border:2px solid var(--blue);box-shadow:0 0 0 3px color-mix(in srgb,var(--blue) 13%,transparent)}
+.calday.other{opacity:.42}
+.calday .monthdots{display:flex;justify-content:center;align-items:center;gap:4px;flex-wrap:wrap;min-height:10px}
+.monthdot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.monthcount{font-size:9px;color:var(--muted);text-align:center;font-weight:750}
+.monthwhole{font-size:10px;line-height:1.25;text-align:center;font-weight:900;color:var(--ink);padding:5px 2px;margin:auto 0;overflow-wrap:anywhere}
+.monthwhole.suspensionlabel{color:#8c42b4}.monthwhole.eventlabel{color:#b36a12}
+#weekCalendar{display:none;margin-top:14px}
+.daydetail{display:none;margin-top:16px}.daydetail.open{display:block}
+.dayactions{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.dayactions .btn{font-size:11px;padding:9px 12px}
+.daydetailhead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.daydetailhead h3{margin:0;font-size:15px}
+.subjectcolors{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;margin-top:12px}
+.subjectcolorrow{display:flex;align-items:center;gap:9px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--white);font-size:11px;font-weight:750}
+.subjectcolorrow input[type=color]{width:31px;height:27px;border:0;padding:0;background:transparent;cursor:pointer;margin-left:auto}
+.colorpanel summary{cursor:pointer;font-weight:850;font-size:12px;color:var(--blue)}
+.timeevent{border-left:4px solid var(--subject-color,var(--blue));background:var(--subject-bg,#eaf0ff);color:var(--subject-ink,#20334f)}
+.timeevent.schedule{border-left-color:var(--subject-color,var(--aqua))}
+.monthhint{font-size:10px;color:var(--muted);margin:0 0 10px}
+.sidebar-toggle{position:absolute;right:-15px;top:22px;width:30px;height:34px;border:1px solid #d8e2f0;background:#fff;color:#29466f;border-radius:0 10px 10px 0;box-shadow:4px 2px 10px #10254418;font-size:22px;line-height:1;font-weight:800;z-index:8;padding:0}.sidebar-toggle:hover{background:#edf4ff;color:var(--blue)}.app.sidebar-collapsed .sidebar-toggle{right:-15px}
+.app.sidebar-collapsed{grid-template-columns:76px 1fr}.app.sidebar-collapsed .side{padding:22px 10px}.app.sidebar-collapsed .brandtxt,.app.sidebar-collapsed .navlabel,.app.sidebar-collapsed .navtext,.app.sidebar-collapsed .sidehint{display:none}.app.sidebar-collapsed .brand{justify-content:center;padding:0 0 26px}.app.sidebar-collapsed .nav button{justify-content:center;padding:13px 5px}.app.sidebar-collapsed .sidebar-toggle{transform:rotate(180deg)}
+.mobilebar{display:none}
+body[data-theme="dark"] .calday.weekend{background:#2b2030;border-color:#493047}
+body[data-theme="dark"] .monthwhole{color:#f3eafa}body[data-theme="dark"] .monthwhole.suspensionlabel{color:#d7a4f4}body[data-theme="dark"] .monthwhole.eventlabel{color:#f3c477}
+body[data-theme="dark"] .subjectcolorrow{background:#182438;color:var(--ink)}
+@media(max-width:760px){
+ .app,.app.sidebar-collapsed{display:block;min-height:100vh}.side{display:none!important}.main{padding:16px 12px 92px}.top{gap:8px;align-items:flex-start;flex-wrap:wrap}.top>div:first-child{flex:1;min-width:150px}.top h1{font-size:21px}.top .themebar{order:3}.top #addTop{order:2}.sidebar-toggle{display:none}
+ .mobilebar{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;z-index:20;bottom:0;left:0;right:0;padding:8px 8px calc(8px + env(safe-area-inset-bottom));background:rgba(18,33,58,.97);border-top:1px solid #34445e;box-shadow:0 -8px 28px #10213b24}
+ .mobilebar button{border:0;background:transparent;color:#c6d4e8;border-radius:10px;padding:7px 2px;font-size:10px;font-weight:750;display:flex;flex-direction:column;align-items:center;gap:3px}.mobilebar button span:first-child{font-size:18px}.mobilebar button.active{background:#2b4164;color:#8fe4e1}
+ .calday{min-height:76px;padding:5px 2px;border-radius:8px}.calday .daynum{width:23px;height:23px;font-size:10px}.monthdot{width:6px;height:6px}.monthcount{font-size:8px}.monthwhole{font-size:8px;padding:3px 0}.weekdays span{font-size:9px}.calgrid,.weekdays{gap:3px}.calendarcontrols{gap:5px}.calendarcontrols strong{min-width:0}.calendarcontrols .btn{padding:8px 9px;font-size:10px}
+ .stats{grid-template-columns:repeat(2,1fr)}.cols{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.panel{padding:13px}.dayactions .btn{flex:1 1 42%}.timeline{min-width:600px}.weekcalendar{overflow-x:auto}.daydetailhead{align-items:flex-start}
+}
+
+
+/* v2.5.1 calendar polish */
+.calday{padding:7px;}
+.daycellhead{display:flex;align-items:flex-start;gap:6px;min-width:0;margin-bottom:8px;text-align:left}
+.calday .daynum{display:grid;place-items:center;flex:0 0 25px;width:25px;height:25px;margin:0;border-radius:50%;font-size:11px}
+.daycelltitle{font-size:9px;line-height:1.2;font-weight:900;letter-spacing:.25px;text-transform:uppercase;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow-wrap:anywhere;color:var(--ink);padding-top:3px}
+.calday.today .daycelltitle{color:var(--blue)}
+.daydetail{display:none;position:fixed;inset:0;z-index:30;margin:0;padding:18px;background:#101d37aa;align-items:center;justify-content:center;overflow-y:auto}
+.daydetail.open{display:flex}
+.daydetail-card{width:min(1120px,96vw);max-height:94vh;overflow:auto;background:var(--white);color:var(--ink);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 24px 80px #07152d55}
+.daymodal-kicker{display:block;color:var(--blue);font-size:9px;font-weight:900;letter-spacing:1.5px;margin-bottom:5px}
+.daydetailhead{position:sticky;top:-20px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--white);z-index:2;padding:2px 0 14px;border-bottom:1px solid var(--line);margin-bottom:15px}
+.daydetailhead h3{font-size:19px;margin:0}
+.daytitle-actions{display:flex;align-items:center;gap:8px}
+.dayplus{width:36px;height:36px;border:0;border-radius:11px;background:var(--blue);color:#fff;font-size:24px;line-height:1;font-weight:500;box-shadow:0 5px 14px #356df333}
+.dayplus:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.daylist-pills{display:grid;grid-template-columns:1fr;gap:9px}
+.day-empty{min-height:145px;border:1px dashed var(--line);border-radius:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;text-align:center;padding:22px;color:var(--muted)}
+.day-empty-icon{width:38px;height:38px;border-radius:13px;background:#edf3ff;color:var(--blue);display:grid;place-items:center;font-size:20px;margin-bottom:3px}
+.day-empty b{font-size:13px;color:var(--ink)}
+.day-empty span{font-size:11px;line-height:1.5;max-width:310px}
+.daypill{display:flex;align-items:center;gap:12px;min-width:0;border-radius:13px;padding:12px 14px;border:1px solid color-mix(in srgb,var(--pill-color) 25%,transparent);background:color-mix(in srgb,var(--pill-color) 14%,var(--white));color:var(--ink)}
+.daypill-mark{width:9px;height:34px;flex:0 0 9px;border-radius:99px;background:var(--pill-color)}
+.daypill-main{flex:1;min-width:0}
+.daypill-main b{display:block;font-size:12px;overflow-wrap:anywhere}
+.daypill-main small{display:block;margin-top:4px;font-size:10px;color:var(--muted);line-height:1.45}
+.daypill-actions{display:flex;gap:5px;flex:0 0 auto}
+.colorpanel summary{display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--white)}
+@media(max-width:600px){.daydetail{padding:8px;align-items:flex-end}.daydetail-card{width:100%;max-height:94vh;border-radius:20px 20px 12px 12px;padding:16px}.daydetailhead{top:-16px}.dayplus{width:34px;height:34px}.daypill{padding:10px}.daypill-actions{flex-direction:column}}
+
+
+/* v2.5.5: clear, persistent title bars for both calendar day view and add/edit form */
+.daydetailhead{background:linear-gradient(110deg,#192b50,#24568b 72%,#168d96)!important;color:#fff!important;border:0!important;border-radius:14px!important;padding:15px 16px!important;margin:-2px -2px 16px!important;box-shadow:0 8px 22px #18365d20}
+.daydetailhead .daymodal-kicker{color:#b9d8f5!important;font-weight:850;letter-spacing:1.5px}
+.daydetailhead h3{color:#fff!important;font-size:19px!important}
+.daydetailhead .dayplus{background:var(--gold)!important;color:#24324b!important;border:0!important;font-weight:900}
+.daydetailhead #closeDay{background:#ffffff22!important;color:#fff!important;border:1px solid #ffffff55!important}
+.modalhead{position:sticky;top:-22px;z-index:3;background:linear-gradient(110deg,#192b50,#24568b 72%,#168d96);color:#fff;border-radius:13px;padding:14px 16px;margin:-2px -2px 18px;box-shadow:0 7px 18px #18365d18}
+.modalhead h2{color:#fff!important}
+.modalhead .close{background:#ffffff22!important;color:#fff!important;border:1px solid #ffffff55!important}
+body[data-theme="dark"] .daydetailhead,body[data-theme="dark"] .modalhead{background:linear-gradient(110deg,#14233f,#1c4770 72%,#126d75)!important}
+
+/* v2.5.6: readable calendar cards and simplified activity flags */
+.flag-options{display:flex;gap:18px;flex-wrap:wrap;padding:12px 14px;border:1px solid var(--line);border-radius:13px;background:#f7f9fd}
+.flag-options .checkline{font-size:14px;font-weight:800;gap:9px}
+.flag-options .checkline span{font-size:12px;font-weight:600;color:var(--muted)}
+.flag-options input{width:19px;height:19px;accent-color:var(--blue)}
+.daypill{border-radius:16px!important;padding:17px 18px!important;gap:14px!important;min-height:82px;cursor:pointer;box-shadow:0 3px 12px #18365d0c}
+.daypill-main b{font-size:19px!important;line-height:1.3!important;letter-spacing:-.2px}
+.daypill-main small{font-size:13px!important;line-height:1.45!important;margin-top:6px!important}
+.daypill-details{display:block;margin-top:8px;font-size:16px!important;line-height:1.5!important;color:var(--ink);overflow-wrap:anywhere}
+.daypill-mark{width:10px!important;flex-basis:10px!important;min-height:46px;height:auto!important}
+#weekCalendar .timehead{font-size:13px!important}
+#weekCalendar .timeaxis .hourlabel{font-size:12px!important;height:64px}
+#weekCalendar .timeevent{border-radius:14px!important;padding:10px 12px!important;left:6px;right:6px;min-height:38px}
+#weekCalendar .timeevent b{font-size:16px!important;line-height:1.3!important}
+#weekCalendar .timeevent small{font-size:13px!important;line-height:1.4!important;margin-top:6px!important}
+@media(max-width:600px){
+ .daypill{padding:14px!important;min-height:76px}
+ .daypill-main b{font-size:17px!important}
+ .daypill-main small{font-size:12px!important}
+ .daypill-details{font-size:14px!important}
+ #weekCalendar .timeevent b{font-size:13px!important}
+ #weekCalendar .timeevent small{font-size:11px!important}
+ .flag-options{gap:12px;flex-direction:column}
+}
+
+
+/* v2.6: Google Calendar-inspired schedule/task presentation */
+.month-eventbars{display:flex;flex-direction:column;gap:3px;margin-top:7px;width:100%;overflow:hidden}
+.month-eventbar{display:block;width:100%;box-sizing:border-box;text-align:left;background:var(--bar);color:#fff;border-radius:6px;padding:3px 7px;font-size:11px;font-weight:750;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.month-more{font-size:11px;font-weight:750;color:var(--muted);padding:2px 5px;text-align:left}
+.calday{align-items:stretch!important}
+.calday .daycellhead{width:100%}
+.timeevent.taskitem{background:#dce9ff!important;border-left:4px solid #3978e8!important;color:#17477e!important}
+.timeevent.taskitem small{color:#315e8d!important}
+.timeevent.schedule{border-radius:10px!important}
+#weekCalendar .timeevent{box-shadow:0 2px 8px #16365d16}
+.daypill{border-radius:14px!important}
+@media(max-width:700px){.month-eventbar{font-size:10px;padding:3px 5px}.month-eventbars{gap:2px}}
+
+
+/* v2.7 Test 1 calendar layout corrections */
+.timeline.daymode{grid-template-columns:76px minmax(300px,1fr);min-width:520px}
+.alldayrow.daymode{grid-template-columns:76px minmax(300px,1fr);min-width:520px}
+.timeline.daymode .timeaxis .hourlabel{font-size:11px;white-space:nowrap;padding-right:10px}
+.timeline.daymode .timeevent{min-width:0;padding:7px 9px;border-radius:9px}
+.timeline.daymode .timeevent b{font-size:13px;line-height:1.25}
+.timeline.daymode .timeevent small{font-size:11px;line-height:1.35}
+.timeline.daymode .timeevent .event-details{white-space:normal}
+.alldayrow.daymode .alldaylabel{text-align:right;padding-right:10px}
+.month-eventbar{border-radius:5px}
+
+
+/* ===== StudyHub 2.7 Test 1: calendar redesign ===== */
+.gcal-panel{padding:18px!important}
+.gcal-toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}
+.gcal-left,.gcal-right{display:flex;align-items:center;gap:9px;min-width:0}
+.gcal-left h2{font-size:22px;margin:0 0 0 8px;font-weight:600;white-space:nowrap}
+.gcal-arrow{width:34px;height:34px;border:0;border-radius:50%;background:transparent;color:#52617a;font-size:26px;line-height:1}
+.gcal-arrow:hover{background:#edf2f8}
+.gcal-right select{border:1px solid #dce3ed;background:#fff;border-radius:20px;padding:9px 13px;font-size:12px;color:#26364f}
+.gcal-right .btn{padding:11px 17px}
+.gcal-surface{min-width:0}
+#monthCalendar .weekdays{gap:0;margin:0;border:1px solid #dce3ed;border-bottom:0;border-radius:13px 13px 0 0;overflow:hidden}
+#monthCalendar .weekdays span{padding:12px 0;font-size:11px;background:#fff}
+#calGrid{gap:0;border:1px solid #dce3ed;border-radius:0 0 13px 13px;overflow:hidden;background:#dce3ed}
+#calGrid .calday{height:126px;min-height:126px;border:0;border-right:1px solid #dce3ed;border-bottom:1px solid #dce3ed;border-radius:0;padding:7px 6px;background:#fff;overflow:hidden}
+#calGrid .calday:nth-child(7n){border-right:0}
+#calGrid .calday:nth-last-child(-n+7){border-bottom:0}
+#calGrid .calday:hover{background:#f8fbff;box-shadow:inset 0 0 0 2px #c9d9ff}
+#calGrid .calday.today{background:#f1f6ff}
+#calGrid .calday.other{background:#fafbfd;color:#9aa5b5;opacity:1}
+#calGrid .daycellhead{display:flex;align-items:center;justify-content:flex-start;gap:6px;min-height:22px;margin-bottom:5px}
+#calGrid .daynum{font-size:13px;font-weight:500;margin:0;width:25px;height:25px;display:grid;place-items:center;border-radius:50%}
+#calGrid .today .daynum{background:#1a73e8;color:white;font-weight:800}
+#calGrid .daycelltitle{display:none}
+#calGrid .month-eventbars{display:flex;flex-direction:column;gap:2px}
+#calGrid .month-eventbar{font-size:11px;font-weight:600;line-height:17px;min-height:19px;padding:1px 7px;border-radius:5px;background:var(--bar);color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0}
+#calGrid .month-eventbar.timed{background:transparent;color:#29364a;padding:1px 3px 1px 15px;position:relative;font-weight:500}
+#calGrid .month-eventbar.timed:before{content:"";position:absolute;left:3px;top:7px;width:8px;height:8px;border-radius:50%;background:var(--bar)}
+#calGrid .month-eventbar .month-time{font-weight:600}
+#calGrid .month-more{font-size:10px;color:#64748b;padding:2px 5px}
+.gcal-timewrap{display:grid;grid-template-columns:58px minmax(0,1fr);border:1px solid #dce3ed;border-radius:13px;overflow:auto;max-height:72vh;background:#fff}
+.gcal-timeaxis{position:sticky;left:0;z-index:4;background:#fff;border-right:1px solid #dce3ed}
+.gcal-timeaxis-head,.gcal-dayhead{height:64px;border-bottom:1px solid #dce3ed;background:#fff;position:sticky;top:0;z-index:3}
+.gcal-timeaxis-head{border-right:1px solid #dce3ed}
+.gcal-hour-label{height:96px;position:relative;top:-8px;text-align:right;padding:0 9px 0 0;font-size:11px;color:#69788f;white-space:nowrap}
+.gcal-days{display:grid;grid-template-columns:repeat(var(--day-count),minmax(115px,1fr));min-width:0}
+.gcal-daycol{position:relative;min-width:0;border-right:1px solid #dce3ed}
+.gcal-daycol:last-child{border-right:0}
+.gcal-dayhead{text-align:center;padding:9px 4px;font-size:11px;color:#64748b}
+.gcal-dayhead b{display:block;font-size:23px;font-weight:500;color:#25334b;margin-top:2px}
+.gcal-dayhead.today b{background:#1a73e8;color:white;border-radius:50%;width:34px;height:34px;line-height:34px;margin:0 auto}
+.gcal-allday{min-height:32px;border-bottom:1px solid #dce3ed;padding:3px;display:flex;flex-direction:column;gap:3px}
+.gcal-allday-chip{font-size:10px;font-weight:700;color:white;background:#13834f;border-radius:5px;padding:4px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.gcal-hours{height:2304px;position:relative;background:repeating-linear-gradient(to bottom,transparent 0,transparent 47px,#e9edf4 47px,#e9edf4 48px,transparent 48px,transparent 95px,#cbd5e1 95px,#cbd5e1 96px)}
+.gcal-hours:before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(to bottom,transparent 0,transparent 47px,#e9edf4 47px,#e9edf4 48px,transparent 48px,transparent 95px,#cbd5e1 95px,#cbd5e1 96px)}
+.gcal-event{position:absolute;z-index:2;border-radius:6px;padding:5px 7px;overflow:hidden;cursor:pointer;background:var(--event-bg);border-left:3px solid var(--event-color);color:var(--event-ink);box-shadow:0 1px 2px #172b4d12;min-width:0}
+.gcal-event strong{display:block;font-size:12px;line-height:1.25;overflow-wrap:anywhere}
+.gcal-event small{display:block;font-size:10px;line-height:1.3;margin-top:3px}
+.gcal-event.task{border-left-width:4px}
+.gcal-now{position:absolute;left:0;right:0;height:2px;background:#d93025;z-index:5;pointer-events:none}
+.gcal-now:before{content:"";position:absolute;left:-4px;top:-3px;width:8px;height:8px;border-radius:50%;background:#d93025}
+.gcal-empty-click{position:absolute;inset:0;cursor:crosshair}
+.gcal-editor{width:min(650px,100%);padding:0!important;border-radius:19px!important;max-height:94vh}
+.editor-top{display:flex;align-items:center;justify-content:space-between;padding:18px 22px 8px}
+.editor-title-wrap small{font-size:9px;letter-spacing:1.5px;font-weight:850;color:#71809a}
+.editor-title-wrap h2{font-size:17px;margin:3px 0 0}
+.gcal-title-input{display:block;width:calc(100% - 56px);margin:10px 28px 14px;border:0;border-bottom:2px solid #1a73e8;border-radius:0;padding:10px 2px;font-size:23px;outline:none;color:#26364f;background:transparent}
+.entry-tabs{display:flex;gap:7px;padding:0 28px 14px;border-bottom:1px solid #e5eaf1}
+.entry-tab{border:0;border-radius:18px;background:transparent;color:#52617a;padding:8px 18px;font-size:12px;font-weight:700}
+.entry-tab.active{background:#d9eaff;color:#1558a6}
+.editor-fields{padding:15px 24px 6px;display:flex;flex-direction:column;gap:15px}
+.editor-row{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:start}
+.editor-icon{font-size:19px;color:#65748b;text-align:center;padding-top:18px}
+.editor-row .formgrid{gap:10px}
+.editor-row .field label{font-size:11px}
+.editor-row .field input,.editor-row .field select,.editor-row .field textarea{font-size:13px;padding:11px;border-radius:8px}
+.editor-flags{display:flex;flex-direction:column;gap:12px;padding:8px 0}
+.editor-flags .checkline{font-size:12px}
+.color-preview{height:39px;border-radius:8px;background:#edf2fa;color:#52617a;display:flex;align-items:center;padding:0 11px;font-size:12px}
+.editor-footer{position:sticky;bottom:0;display:flex;justify-content:flex-end;gap:9px;padding:13px 24px 18px;background:#fff;border-top:1px solid #e5eaf1}
+#modalbg{z-index:80}
+#gradeModalbg{z-index:85}
+.daydetail{z-index:40}
+body[data-theme="dark"] .gcal-timewrap,body[data-theme="dark"] .gcal-timeaxis,body[data-theme="dark"] .gcal-timeaxis-head,body[data-theme="dark"] .gcal-dayhead,body[data-theme="dark"] #monthCalendar .weekdays span{background:#182438;color:var(--ink);border-color:var(--line)}
+body[data-theme="dark"] #calGrid .calday{background:#182438;border-color:var(--line);color:var(--ink)}
+body[data-theme="dark"] #calGrid .calday.other{background:#142033}
+body[data-theme="dark"] .gcal-days,body[data-theme="dark"] .gcal-daycol{border-color:var(--line)}
+body[data-theme="dark"] .gcal-hours{background:repeating-linear-gradient(to bottom,transparent 0,transparent 47px,#344158 47px,#344158 48px,transparent 48px,transparent 95px,#52627a 95px,#52627a 96px)}
+body[data-theme="dark"] .gcal-editor,body[data-theme="dark"] .editor-footer{background:#182438}
+body[data-theme="dark"] .gcal-title-input{color:var(--ink)}
+@media(max-width:760px){
+ .gcal-toolbar{align-items:flex-start;flex-direction:column}
+ .gcal-left,.gcal-right{width:100%;justify-content:space-between}
+ .gcal-left h2{font-size:19px}
+ #calGrid .calday{height:100px;min-height:100px;padding:4px}
+ #calGrid .month-eventbar{font-size:9px;line-height:14px;min-height:16px;padding:1px 4px}
+ #calGrid .month-eventbar.timed{padding-left:12px}
+ .gcal-timewrap{max-height:68vh;grid-template-columns:48px minmax(0,1fr)}
+ .gcal-days{min-width:720px}
+ .gcal-editor{max-height:96vh}
+ .editor-fields{padding:12px 15px}
+ .editor-top{padding:15px 16px 5px}
+ .gcal-title-input{width:calc(100% - 36px);margin-left:18px;margin-right:18px;font-size:20px}
+ .entry-tabs{padding-left:18px}
+ .editor-footer{padding:12px 16px}
+}
+
+
+/* v2.7.1 visual polish */
+.daydetail-card{width:min(1240px,98vw)!important;padding:24px!important}
+.daydetailhead h3{font-size:25px!important}
+.daymodal-kicker{font-size:11px!important}
+#weekCalendar{font-size:14px}
+#weekCalendar .weekcalendar{padding:16px}
+#weekCalendar .timehead{font-size:13px;height:50px;padding:12px 6px}
+#weekCalendar .timeaxis .hourlabel{font-size:12px;height:64px}
+#weekCalendar .timeevent{border-radius:12px;padding:9px 11px;left:6px;right:6px;min-height:34px}
+#weekCalendar .timeevent b{font-size:14px;line-height:1.3}
+#weekCalendar .timeevent small{font-size:12px;line-height:1.35;margin-top:5px}
+#weekCalendar .alldaylabel{font-size:12px}
+#weekCalendar .alldaylabeltext{border-radius:11px;padding:9px 12px;font-size:13px;font-weight:850;margin:3px 0}
+.daylist-pills{gap:12px}
+.daypill{border-radius:16px;padding:16px 18px;gap:14px;align-items:flex-start}
+.daypill-mark{width:11px;flex-basis:11px;height:46px}
+.daypill-main b{font-size:16px;line-height:1.35}
+.daypill-main small{font-size:12px;line-height:1.45;margin-top:6px}
+.daypill-details{display:block;margin-top:5px;font-size:14px;line-height:1.45;color:var(--ink);overflow-wrap:anywhere}
+/* Solid subject-color blocks, with readable contrast. */
+.gcal-event{background:var(--event-color)!important;color:var(--event-ink,#fff)!important;border:0!important;border-radius:8px!important;box-shadow:0 2px 5px #14233f24!important;padding:7px 9px!important}
+.gcal-event strong,.gcal-event small{color:inherit!important}
+.gcal-event.task{border:0!important}
+.gcal-allday-chip{border-radius:7px!important;padding:6px 8px!important;font-size:11px!important}
+/* Assessment planner: Google Tasks-inspired cards instead of a dense spreadsheet. */
+#view-assessments .tablewrap{overflow:visible}
+#view-assessments table{min-width:0;border-collapse:separate;border-spacing:0 9px}
+#view-assessments thead{display:none}
+#view-assessments tbody{display:flex;flex-direction:column;gap:9px}
+#view-assessments tbody tr{display:grid;grid-template-columns:minmax(180px,1.6fr) minmax(115px,1fr) minmax(110px,.8fr) minmax(110px,.9fr) 70px 95px 90px auto;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px 15px;box-shadow:0 3px 12px #18365d08}
+#view-assessments tbody td{border:0;padding:2px 0;min-width:0;overflow-wrap:anywhere}
+#view-assessments tbody td:first-child{display:flex;align-items:flex-start;gap:10px}
+#view-assessments tbody td:first-child:before{content:"";width:17px;height:17px;flex:0 0 17px;border:2px solid #aab7c9;border-radius:50%;margin-top:1px}
+#view-assessments tbody td:first-child b{font-size:13px;line-height:1.35}
+#view-assessments tbody td:nth-child(2),#view-assessments tbody td:nth-child(3),#view-assessments tbody td:nth-child(4){font-size:11px;color:#53627a}
+#view-assessments tbody td:last-child{display:flex;gap:5px;flex-wrap:wrap}
+#view-assessments .mini{font-size:10px;padding:7px 9px;border-radius:8px}
+#view-assessments .mini.del{background:#fff0f0;color:#b83d4c}
+#view-assessments .typepill{display:inline-block;background:#eef3ff;color:#3159b8;padding:5px 8px;border-radius:99px;font-size:10px;font-weight:800}
+.delete-confirm{position:fixed;inset:0;z-index:120;background:#101d37a8;display:none;align-items:center;justify-content:center;padding:18px}
+.delete-confirm.show{display:flex}
+.delete-card{width:min(390px,100%);background:#fff;border-radius:17px;padding:22px;box-shadow:0 20px 60px #08152d44}
+.delete-card h3{margin:0 0 8px;font-size:18px;color:#192743}
+.delete-card p{margin:0;color:#66748a;font-size:13px;line-height:1.5;overflow-wrap:anywhere}
+.delete-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}
+.delete-actions button{border:0;border-radius:9px;padding:10px 14px;font-weight:800;font-size:12px}
+.delete-actions .keep{background:#edf2ff;color:#3159b8}
+.delete-actions .sure{background:#c83d4b;color:white}
+.editor-footer{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:14px 22px 18px;border-top:1px solid #e9edf3}
+.editor-footer-right{display:flex;gap:8px}
+.editor-delete{border:0;border-radius:9px;padding:10px 13px;background:#fff0f0;color:#b83d4c;font-size:12px;font-weight:800}
+@media(max-width:900px){#view-assessments tbody tr{grid-template-columns:minmax(0,1fr) minmax(110px,.7fr) auto;gap:8px}#view-assessments tbody td:nth-child(2){grid-column:1}#view-assessments tbody td:nth-child(3){grid-column:2}#view-assessments tbody td:nth-child(4){grid-column:1}#view-assessments tbody td:nth-child(5),#view-assessments tbody td:nth-child(6),#view-assessments tbody td:nth-child(7){display:none}#view-assessments tbody td:last-child{grid-column:3;grid-row:1/4;justify-content:flex-end}}
+@media(max-width:600px){.daydetail-card{padding:16px!important}.daydetailhead h3{font-size:21px!important}.daypill{padding:13px}.daypill-main b{font-size:15px}.daypill-details{font-size:13px}#weekCalendar .timeevent b{font-size:12px}#weekCalendar .timeevent small{font-size:10px}#view-assessments tbody tr{padding:11px;grid-template-columns:minmax(0,1fr) auto}}
+
+.grades-intro{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:24px 27px;margin-bottom:17px;border-radius:18px;background:linear-gradient(115deg,#172b50,#24568b 72%,#138c95);color:#fff;box-shadow:0 10px 28px #17365d18}
+.grades-intro .eyebrow{color:#8ee8df}.grades-intro h2{font-size:24px;letter-spacing:-.5px;margin:7px 0}.grades-intro p{font-size:12px;line-height:1.6;color:#dce9f8;max-width:600px;margin:0}.grades-mark{width:58px;height:58px;border-radius:17px;display:grid;place-items:center;background:#ffffff20;border:1px solid #ffffff38;font-size:30px;font-weight:800;color:#f8ce72;flex-shrink:0}
+.grade-panel{padding:21px}.grade-panel .subjectcard{padding:17px;border-radius:15px;background:linear-gradient(160deg,#fff,#f8faff);box-shadow:0 4px 15px #203a6509}.grade-panel .subjectcard h3{font-size:13px;min-height:30px}.grade-panel .pair b{font-size:20px;color:#203e70}.grade-panel .targethint{padding-top:9px;border-top:1px solid #e8edf5}
+@media(max-width:760px){.sidebar-toggle{display:none}.themebar{margin-left:0}.grades-intro{padding:19px}.grades-intro h2{font-size:21px}}
+
+/* v2.7.3 customizable daily schedule templates */
+.day-schedule-picker{display:flex;align-items:center;gap:8px;margin-top:9px;flex-wrap:wrap}.day-schedule-picker label{font-size:11px;font-weight:750;color:#d9e8fa}.day-schedule-picker select{border:1px solid #ffffff55;border-radius:8px;background:#ffffff18;color:#fff;padding:7px 10px;font-size:12px;min-width:180px}.day-schedule-picker option{color:#192743;background:#fff}
+#customizeSchedules{white-space:nowrap}.schedule-manager{position:fixed;inset:0;background:#101d37aa;z-index:120;display:none;align-items:center;justify-content:center;padding:16px}.schedule-manager.show{display:flex}.schedule-manager-card{width:min(760px,100%);max-height:92vh;overflow:auto;background:var(--white);color:var(--ink);border-radius:18px;padding:22px;box-shadow:0 24px 80px #08152c55}.schedule-manager-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px}.schedule-manager-head h2{font-size:20px;margin:0}.schedule-manager-head p{font-size:11px;color:var(--muted);margin:5px 0 0}.schedule-template-list{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 18px}.schedule-template-chip{border:1px solid var(--line);background:#f5f7fb;color:var(--ink);padding:8px 11px;border-radius:9px;font-size:11px;font-weight:800}.schedule-template-chip.active{background:#eaf0ff;border-color:var(--blue);color:var(--blue)}.schedule-editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.schedule-editor-grid input,.schedule-editor-grid select{width:100%;border:1px solid var(--line);border-radius:9px;padding:10px;background:var(--white);color:var(--ink)}.schedule-days{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 16px}.schedule-days label{display:flex;align-items:center;gap:5px;padding:7px 10px;border:1px solid var(--line);border-radius:9px;font-size:11px;font-weight:750}.schedule-days input{accent-color:var(--blue)}.schedule-periods{display:flex;flex-direction:column;gap:8px}.schedule-period{display:grid;grid-template-columns:minmax(150px,1.4fr) 1fr 1fr auto;gap:8px;align-items:center}.schedule-period select,.schedule-period input{min-width:0;border:1px solid var(--line);border-radius:8px;padding:9px;background:var(--white);color:var(--ink);font-size:12px}.schedule-manager-actions{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:18px}.schedule-manager-actions .right{display:flex;gap:8px}.schedule-manager-note{font-size:11px;color:var(--muted);line-height:1.5}.schedule-template-block{position:absolute;z-index:2;border-radius:7px;padding:7px 8px;overflow:hidden;cursor:pointer;background:color-mix(in srgb,var(--template-color) 16%,white);color:#20314c;box-shadow:inset 3px 0 0 var(--template-color),0 1px 3px #14233f12;border:1px solid color-mix(in srgb,var(--template-color) 32%,white)!important;text-align:left}.schedule-template-block strong{display:block;font-size:13px;line-height:1.25;white-space:normal;overflow-wrap:anywhere;text-align:right;color:#20314c}.schedule-template-block small{display:block;font-size:11px;margin-top:4px;color:#52627a;text-align:right}.month-template-event{font-size:9px;padding:4px 5px;border-radius:5px;margin:3px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#20314c;font-weight:750;cursor:pointer}.template-task-choice{position:fixed;inset:0;z-index:130;background:#101d37aa;display:none;align-items:center;justify-content:center;padding:15px}.template-task-choice.show{display:flex}.template-task-card{background:var(--white);color:var(--ink);border-radius:16px;padding:20px;width:min(390px,100%);box-shadow:0 20px 70px #08152c55}.template-task-card h3{margin:0 0 5px;font-size:18px}.template-task-card p{margin:0 0 16px;font-size:12px;color:var(--muted)}.template-task-card button{width:100%;margin-top:8px;text-align:left;padding:12px;border:1px solid var(--line);border-radius:10px;background:#f5f8fc;color:var(--ink);font-weight:800}.template-task-card .cancel-choice{background:transparent;text-align:center}
+@media(max-width:650px){.schedule-editor-grid{grid-template-columns:1fr}.schedule-period{grid-template-columns:1fr 1fr}.schedule-period select{grid-column:1/-1}.schedule-manager-card{padding:16px}.gcal-toolbar{align-items:flex-start}.day-schedule-picker select{min-width:150px}}
+
+/* StudyHub v2.7.6 timetable and schedule export */
+.schedule-template-block{
+ position:absolute;z-index:1;display:block;overflow:hidden;border:0;border-left:4px solid var(--template-color);
+ border-radius:9px;padding:7px 8px;background:color-mix(in srgb,var(--template-color) 30%,#fff);
+ color:#000;text-align:left;box-shadow:0 1px 3px #1c355012;border:1.5px solid #111!important;cursor:pointer;
+}
+.period-block-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;min-height:18px}
+.period-block-head strong{font-size:12px;line-height:1.2;text-align:right;color:#000!important;margin-left:auto}
+.period-time{font-size:10px;color:#53647b;white-space:nowrap}
+.period-task-list{display:flex;flex-wrap:wrap;align-content:flex-start;gap:5px;margin-top:7px;max-height:calc(100% - 25px);overflow:auto}
+.period-task-chip{display:inline-flex;align-items:center;gap:8px;max-width:100%;min-width:0;border:1px solid color-mix(in srgb,var(--template-color) 24%,#fff);border-radius:7px;padding:5px 7px;background:#fff;color:#25344d;text-align:left;box-shadow:0 1px 2px #1a2d4710}
+.period-task-name{font-size:11px;font-weight:700;white-space:normal;overflow-wrap:anywhere}
+.period-task-time{font-size:10px;color:#65748b;white-space:nowrap;margin-left:auto}
+.schedule-template-block:hover{filter:saturate(1.08);box-shadow:0 2px 7px #1a2d4720}
+.no-classes-banner{background:#8792a4!important}
+#calGrid .month-template-event{display:none!important}
+/* v2.7.12 stronger timetable contrast */
+.schedule-template-block{background:color-mix(in srgb,var(--template-color) 30%,#fff)!important;border:1.5px solid #111!important;color:#000!important;box-shadow:none!important}
+.schedule-template-block strong,.period-block-head strong{color:#000!important}
+
+</style><style>
+/* StudyHub v2.7.8 compact activity chips and detail popup */
+.no-classes-banner{background:#8b95a7!important;color:#fff!important;text-align:center;font-weight:900;letter-spacing:.08em}
+.period-task-chip{display:inline-flex;align-items:center;gap:5px;flex:0 1 auto;width:max-content;max-width:100%;min-width:0;border:1px solid color-mix(in srgb,var(--template-color) 24%,#fff);border-radius:7px;padding:4px 6px;margin:0;background:#ffffffed;color:#26364f;text-align:left;font-size:10px;vertical-align:top}
+.period-task-toggle{display:inline-flex;align-items:center;border:0;background:transparent;color:inherit;padding:0;text-align:left;min-width:0;max-width:100%;cursor:pointer}
+.period-task-name{display:block;max-width:min(220px,52vw);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px;font-weight:750}
+.activity-edit{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;width:19px;height:19px;border:0;border-radius:5px;background:#edf3ff;color:#245bd1;padding:0;font-size:12px;line-height:1;cursor:pointer}
+.activity-edit:hover{background:#dce8ff}
+.activity-details{display:none}
+#modalbg.activity-context .entry-tabs,#modalbg.activity-context .activity-hide{display:none!important}
+#modalbg.activity-context .activity-notes{display:grid!important}
+
+.activity-popup{position:fixed;inset:0;z-index:145;background:#101d37aa;display:none;align-items:center;justify-content:center;padding:16px}.activity-popup.show{display:flex}.activity-popup-card{width:min(430px,100%);background:var(--white);color:var(--ink);border-radius:16px;padding:20px;box-shadow:0 20px 70px #08152c55}.activity-popup-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.activity-popup-head small{font-size:9px;font-weight:900;letter-spacing:.12em;color:var(--muted)}.activity-popup-head h3{font-size:19px;margin:4px 0 0;overflow-wrap:anywhere}.activity-popup-meta{font-size:11px;color:var(--muted);margin-top:12px}.activity-popup-details{font-size:13px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere;margin:16px 0;min-height:24px}.activity-popup-actions{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+</style>
+<style id="studyhub-v4-polish">
+:root{
+ --bg:#f4f6fa;--ink:#17263f;--muted:#718096;--blue:#315fcb;--aqua:#48bdb6;
+ --gold:#e6b34e;--line:#e1e7ef;--white:#fff;
+}
+*{ -webkit-tap-highlight-color:transparent }
+body{font-family:Inter,"Segoe UI",system-ui,sans-serif;line-height:1.45;letter-spacing:0}
+button,input,select,textarea{font-family:inherit}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{
+ outline:3px solid color-mix(in srgb,var(--blue) 35%,transparent);outline-offset:2px
+}
+.app{grid-template-columns:232px minmax(0,1fr)}
+.side{position:sticky;top:0;height:100vh;padding:24px 14px;background:#172943}
+.brand{padding:0 9px 30px}
+.logo{width:36px;height:36px;border-radius:10px;background:var(--blue);font-size:17px}
+.brand strong{font-size:16px;letter-spacing:.1px}
+.brand small{font-size:9px;letter-spacing:1.2px}
+.nav button{min-height:42px;font-size:13px;border-radius:8px;margin:4px 0}
+.nav button.active{background:#29405f;color:#fff;box-shadow:inset 3px 0 #55c8c0}
+.sidebar-toggle{top:25px}
+.main{width:100%;max-width:1680px;margin:0 auto;padding:27px clamp(18px,3vw,44px)}
+.top{min-height:54px;margin-bottom:20px}
+.eyebrow{font-size:10px;letter-spacing:1.25px}
+h1{font-size:26px;letter-spacing:-.65px;font-weight:750}
+.btn{min-height:38px;border-radius:8px;padding:9px 13px;font-size:12px;font-weight:700;transition:background .15s,border-color .15s,transform .15s}
+.btn:active,.mini:active{transform:translateY(1px)}
+.primary{background:#315fcb}
+.primary:hover{background:#264fae}
+.light{background:#f1f4f9;color:#344966;border:1px solid #e0e6ef}
+.light:hover{background:#e8edf5}
+.panel,.stat,.hero{border:1px solid var(--line);border-radius:13px;box-shadow:0 2px 9px #152b4808}
+.panel{padding:18px;margin-bottom:14px}
+.panelhead{margin-bottom:13px}
+.panelhead h2{font-size:15px;font-weight:750;letter-spacing:-.1px}
+.stats{gap:11px;margin-bottom:14px}
+.stat{padding:15px 16px}
+.stat label{font-size:11px;font-weight:650;color:#718096}
+.stat strong{font-size:26px;line-height:1.1;margin:8px 0 0;font-weight:750}
+.cols{gap:14px}
+.subjectrow{grid-template-columns:32px minmax(0,1fr) auto;gap:9px}
+.subicon{width:32px;height:32px;border-radius:8px}
+.subname{font-size:12px}
+.progress{height:6px;background:#edf1f6}
+.progress span{background:var(--blue)}
+.due{border-radius:9px;padding:9px;border-color:#e8edf3}
+.datebox{background:#f1f4f9;border-radius:7px}
+.tag{font-size:9px}
+.mini{border-radius:7px;font-size:10px}
+.filters{gap:7px}
+.filters input,.filters select{min-height:36px;border-radius:8px;border-color:var(--line);font-size:12px}
+.tablewrap{border:1px solid var(--line);border-radius:10px}
+table{min-width:720px}
+th{font-size:9px;letter-spacing:.55px}
+td{font-size:11px}
+.subjectgrid{gap:10px}
+.subjectcard{border-radius:10px;box-shadow:none}
+.subjectcard:hover,.subjectcard.selected{box-shadow:0 0 0 2px color-mix(in srgb,var(--blue) 15%,transparent)}
+.gcal-panel{padding:17px!important}
+.gcal-toolbar{gap:12px;margin-bottom:13px}
+.gcal-left,.gcal-right{gap:7px}
+.gcal-left h2{font-size:20px;font-weight:700;letter-spacing:-.3px}
+.gcal-arrow{width:34px;height:34px;font-size:24px;border-radius:8px}
+.gcal-arrow:hover{background:#edf2f8}
+.gcal-right select{min-height:37px;border-radius:8px;border-color:var(--line);font-size:12px}
+.gcal-right .btn{padding:9px 11px}
+#monthCalendar .weekdays span{font-size:10px;font-weight:750;color:#66758b;background:#f8f9fc;padding:10px 0}
+#monthCalendar .weekdays{border-color:var(--line)}
+#calGrid{background:var(--line);border-color:var(--line)}
+#calGrid .calday{height:120px;min-height:120px;padding:7px;background:#fff}
+#calGrid .calday.today{background:#f4f7ff}
+#calGrid .calday:hover{background:#fafcff;box-shadow:inset 0 0 0 1px #b9cbed}
+#calGrid .daynum{font-size:12px}
+#calGrid .month-eventbar{font-size:10px;line-height:16px;min-height:17px;border-radius:4px;padding:1px 5px}
+#calGrid .month-eventbar.timed{color:#26364c}
+.legendline{font-size:10px;gap:13px;margin-top:11px}
+.colorpanel{padding:14px 17px}
+.colorpanel summary{font-size:12px}
+.subjectcolorrow{border-radius:8px}
+.daydetail-card{border-radius:14px!important;box-shadow:0 18px 60px #0a193044!important}
+.daydetailhead{border-radius:10px!important;box-shadow:none!important}
+.daypill{box-shadow:none!important;border-radius:10px!important}
+.modal,.gcal-editor,.schedule-manager-card,.template-task-card,.activity-popup-card{border-radius:13px!important;box-shadow:0 16px 50px #0a193033!important}
+.editor-top{padding:16px 20px 6px}
+.editor-title-wrap h2{font-size:17px}
+.gcal-title-input{font-size:21px}
+.entry-tab{border-radius:8px;padding:8px 13px}
+.entry-tab.active{background:#eaf0fc;color:#234f9f}
+.editor-fields{gap:13px}
+.editor-row .field input,.editor-row .field select,.editor-row .field textarea{border-color:#dfe5ed;border-radius:7px}
+.editor-footer{padding:12px 20px 16px}
+.schedule-manager-card{padding:20px}
+.schedule-period{gap:7px}
+.schedule-period select,.schedule-period input{border-radius:7px}
+.toast{box-shadow:0 5px 20px #0c1b3428}
+.mobilebar{background:#172943;border-top:1px solid #30435e;box-shadow:0 -4px 18px #10213b14}
+.mobilebar button{font-size:10px}
+.mobilebar button.active{background:#263e5e;color:#8ee0d8}
+body[data-theme="dark"] .side{background:#0d1727}
+body[data-theme="dark"] .panel,body[data-theme="dark"] .stat,body[data-theme="dark"] .subjectcard,
+body[data-theme="dark"] .modal,body[data-theme="dark"] .daydetail-card{box-shadow:none}
+body[data-theme="dark"] #monthCalendar .weekdays span{background:#1c2b41}
+body[data-theme="dark"] #calGrid{background:#2b3a50}
+body[data-theme="dark"] #calGrid .calday{background:#182438}
+body[data-theme="dark"] #calGrid .calday.today{background:#203554}
+body[data-theme="dark"] .light{background:#253650;color:#dce6f4;border-color:#344762}
+body[data-theme="dark"] .filters input,body[data-theme="dark"] .filters select{background:#142033}
+@media(max-width:950px){
+ .app{grid-template-columns:68px minmax(0,1fr)}
+ .main{padding:22px 20px}
+ .gcal-toolbar{align-items:flex-start}
+ .gcal-right{flex-wrap:wrap}
+}
+@media(max-width:760px){
+ .app,.app.sidebar-collapsed{display:block}
+ .side{display:none!important}
+ .main{padding:16px 12px calc(88px + env(safe-area-inset-bottom))}
+ .top{display:flex;align-items:center;gap:9px;margin-bottom:14px}
+ .top>div:first-child{min-width:0}
+ h1{font-size:22px}
+ .top .themebar{order:3;margin-left:0}
+ .top #addTop{order:2;margin-left:auto}
+ .themebar label{display:none}
+ .themebar select{padding:8px 9px;min-height:36px}
+ .stats{gap:8px}
+ .stat{padding:12px}
+ .stat strong{font-size:23px}
+ .cols{grid-template-columns:1fr}
+ .panel{padding:14px}
+ .gcal-panel{padding:10px!important}
+ .gcal-toolbar{gap:10px;margin-bottom:10px}
+ .gcal-left{display:grid;grid-template-columns:auto 34px 34px minmax(0,1fr);width:100%;gap:5px}
+ .gcal-left h2{font-size:16px;text-align:right}
+ .gcal-right{display:grid;grid-template-columns:1fr 1fr;gap:6px;width:100%}
+ .gcal-right select{grid-column:1/-1;width:100%}
+ .gcal-right #customizeSchedules,.gcal-right #exportSchedule{width:100%;font-size:10px}
+ .gcal-right #calendarAdd{grid-column:1/-1}
+ #calGrid .calday{height:78px;min-height:78px;padding:4px 2px}
+ #calGrid .daynum{width:22px;height:22px;font-size:10px}
+ #calGrid .month-eventbar{font-size:8px;line-height:12px;min-height:13px;padding:1px 3px}
+ #calGrid .month-more{font-size:8px;padding:1px 2px}
+ #monthCalendar .weekdays span{font-size:9px;padding:8px 0}
+ .legendline{gap:8px;font-size:9px}
+ .daydetail{padding:7px}
+ .daydetail-card{padding:13px!important}
+ .daydetailhead{padding:12px!important}
+ .daydetailhead h3{font-size:18px!important}
+ .schedule-manager-card{padding:14px}
+ .schedule-period{grid-template-columns:1fr 1fr}
+ .schedule-period select{grid-column:1/-1}
+ .editor-fields{padding:10px 14px 5px}
+ .editor-row{grid-template-columns:20px minmax(0,1fr);gap:7px}
+ .editor-icon{font-size:16px}
+ .gcal-title-input{font-size:19px;margin-top:7px}
+ .editor-footer{padding:10px 14px 14px}
+ .tablewrap{overflow-x:auto}
+ .mobilebar{padding:6px 8px calc(6px + env(safe-area-inset-bottom))}
+}
+@media(max-width:390px){
+ .main{padding-left:9px;padding-right:9px}
+ .top{flex-wrap:wrap}
+ .top>div:first-child{flex:1 1 100%}
+ .top #addTop{margin-left:0}
+ .top .themebar{margin-left:auto}
+ #calGrid .calday{height:68px;min-height:68px}
+ .gcal-left h2{font-size:14px}
+ .gcal-right{grid-template-columns:1fr 1fr}
+ .gcal-right #customizeSchedules,.gcal-right #exportSchedule{font-size:9px;padding:8px 5px}
+}
+</style>
+</head><body>
+<div class="app" id="appShell"><aside class="side"><div class="brand"><div class="logo">S</div><div class="brandtxt"><strong>StudyHub</strong><small>S.H.I.N.E.</small></div></div><nav class="nav">
+<button class="active" data-view="dashboard"><span>▦</span><span class="navtext">Dashboard</span></button><button data-view="assessments"><span>☷</span><span class="navtext">Assessments</span></button><button data-view="calendar"><span>▦</span><span class="navtext">Calendar</span></button><button data-view="grades"><span>◒</span><span class="navtext">Grades & targets</span></button></nav><button class="sidebar-toggle" id="sidebarToggle" type="button" title="Collapse sidebar" aria-label="Collapse sidebar">‹</button></aside>
+<main class="main"><header class="top"><div><div class="eyebrow">QUARTER 2</div><h1 id="pageTitle">Dashboard</h1></div><div class="themebar"><label for="themeSelect">THEME</label><select id="themeSelect"><option value="light">Classic</option><option value="dark">Dark</option><option value="mint">Mint</option><option value="lavender">Lavender</option><option value="rose">Rose</option><option value="ocean">Ocean</option></select></div><button class="btn primary" id="addTop">＋ Add activity</button></header>
+<section class="view active" id="view-dashboard">
+<div class="stats"><div class="stat"><label>Tracked activities</label><strong id="statTotal">0</strong></div><div class="stat"><label>Upcoming</label><strong id="statUpcoming">0</strong></div><div class="stat"><label>Completion</label><strong id="statComplete">0%</strong></div><div class="stat"><label>Subjects</label><strong id="statSubjects">0</strong></div></div>
+<div class="cols"><div class="panel"><div class="panelhead"><div><h2>Subject overview</h2></div><button class="mini" data-go="grades">GRADE TARGETS →</button></div><div id="subjectOverview" class="subject-list"></div></div><div class="panel"><div class="panelhead"><div><h2>Coming up next</h2></div><button class="mini" data-go="calendar">OPEN CALENDAR →</button></div><div id="upcomingList" class="duelist"></div></div></div>
+</section>
+<section class="view" id="view-assessments"><div class="panel"><div class="panelhead"><div><h2>Assessments</h2></div><button class="btn primary" id="addAssessment">＋ Add activity</button></div><div class="filters"><input id="search" placeholder="Search activity or topic…"><select id="filterSubject"><option value="">All subjects</option></select><select id="filterStatus"><option value="">All statuses</option><option value="pending">Pending</option><option value="completed">Completed</option></select></div><div class="tablewrap"><table><thead><tr><th>Activity</th><th>Type / platform</th><th>Subject</th><th>Due date / time</th><th>Weight</th><th>Score</th><th>Status</th><th>Actions</th></tr></thead><tbody id="rows"></tbody></table></div><div class="empty" id="tableEmpty" style="display:none">No activities found. Add an activity to get started.</div></div></section>
+<section class="view" id="view-calendar">
+ <div class="panel gcal-panel">
+  <div class="gcal-toolbar">
+   <div class="gcal-left">
+    <button class="btn light" id="todayBtn">Today</button>
+    <button class="gcal-arrow" id="prev" aria-label="Previous">‹</button>
+    <button class="gcal-arrow" id="next" aria-label="Next">›</button>
+    <h2 id="monthLabel">November 2026</h2>
+   </div>
+   <div class="gcal-right">
+    <select id="calendarViewSelect" aria-label="Calendar view"><option value="month">Month</option><option value="week">Week</option><option value="day">Day</option></select>
+    <button class="btn light" id="customizeSchedules">⚙ Schedules</button><button class="btn light" id="exportSchedule">▧ Save image</button><button class="btn primary" id="calendarAdd">＋ Create</button>
+   </div>
+  </div>
+  <div id="monthCalendar" class="gcal-surface">
+   <div class="weekdays"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+   <div id="calGrid" class="calgrid"></div>
+  </div>
+  <div id="mainTimeline" class="gcal-surface" style="display:none"></div>
+  <div class="legendline"><span><i class="dot" style="background:#3978e8"></i>Schedule / task</span><span><i class="dot" style="background:#9864cf"></i>No classes</span><span><i class="dot" style="background:#13834f"></i>All-day event</span></div>
+  <div class="daydetail" id="dayDetail" aria-hidden="true">
+   <div class="daydetail-card" role="dialog" aria-modal="true" aria-labelledby="dayTitle">
+    <div class="daydetailhead">
+     <div class="daytitlewrap"><small class="daymodal-kicker">DAILY SCHEDULE</small><h3 id="dayTitle">Selected date</h3><div class="day-schedule-picker"><label for="dayScheduleSelect">Daily schedule</label><select id="dayScheduleSelect"><option value="">No saved schedule</option></select></div></div>
+     <div class="daytitle-actions"><button class="dayplus" id="dayAdd" aria-label="Create">＋</button><button class="close" id="closeDay" aria-label="Close">×</button></div>
+    </div>
+    <div id="weekCalendar" class="weekcalendar"></div>
+    <div id="dayList" class="duelist"></div>
+   </div>
+  </div>
+ </div>
+ <details class="panel colorpanel"><summary>Subject colors</summary><div class="subjectcolors" id="subjectColors"></div></details>
+</section>
+<section class="view" id="view-grades"><div class="grades-intro"><div><span class="eyebrow">QUARTER 2</span><h2>Subject performance</h2></div><div class="grades-mark">％</div></div><div class="panel grade-panel"><div class="panelhead"><div><h2>Subject breakdown</h2></div></div><div id="gradeOverview" class="subjectgrid"></div></div><div class="panel"><div class="panelhead"><div><h2 id="targetTitle">Choose a subject</h2></div></div><div id="targetDetail" class="empty">Select any subject card above to choose a target grade.</div></div></section>
+
+</main></div><nav class="mobilebar" aria-label="Main navigation"><button class="active" data-view="dashboard"><span>⌂</span>Home</button><button data-view="calendar"><span>▦</span>Calendar</button><button data-view="assessments"><span>☷</span>Tasks</button><button data-view="grades"><span>◒</span>Grades</button></nav>
+<div class="activity-popup" id="activityPopup" aria-hidden="true"><div class="activity-popup-card" role="dialog" aria-modal="true" aria-labelledby="activityPopupTitle"><div class="activity-popup-head"><div><small>CLASS ACTIVITY</small><h3 id="activityPopupTitle">Activity</h3></div><button type="button" class="close" id="closeActivityPopup" aria-label="Close">×</button></div><div class="activity-popup-meta" id="activityPopupMeta"></div><p class="activity-popup-details" id="activityPopupDetails">No details added.</p><div class="activity-popup-actions"><button type="button" class="btn light" id="activityPopupClose">Close</button><button type="button" class="btn primary" id="activityPopupEdit">✎ Edit activity</button></div></div></div>
+<div class="modalbg" id="modalbg"><div class="modal gcal-editor" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+ <div class="editor-top"><div class="editor-title-wrap"><small>STUDYHUB CALENDAR</small><h2 id="modalTitle">Create</h2></div><button class="close" id="close" aria-label="Close">×</button></div>
+ <form id="activityForm">
+  <input type="hidden" id="editId"><input type="hidden" id="due">
+  <input class="gcal-title-input" id="title" required maxlength="90" placeholder="Add title" aria-label="Activity title">
+  <div class="entry-tabs" role="group" aria-label="Entry type">
+   <button type="button" class="entry-tab active" data-entry-tab="schedule">Schedule</button>
+   <button type="button" class="entry-tab" data-entry-tab="task">Task</button>
+  </div>
+  <input type="hidden" id="entryType" value="schedule">
+  <div class="editor-fields">
+   <div class="editor-row"><span class="editor-icon">◷</span><div class="formgrid">
+    <div class="field"><label for="dueDate">Date</label><input id="dueDate" type="date" required></div>
+    <div class="field"><label for="repeatMode">Repeats</label><select id="repeatMode"><option value="once">Does not repeat</option><option value="daily">Daily</option><option value="weekly">Weekly</option></select></div>
+    <div class="field"><label for="startTime">Start time</label><input id="startTime" type="time" required></div>
+    <div class="field"><label for="endTime">End time</label><input id="endTime" type="time" required></div>
+   </div></div>
+   <div class="editor-row"><span class="editor-icon">▤</span><div class="formgrid">
+    <div class="field"><label for="subject">Subject</label><select id="subject"><option value="N/A">N/A</option><option>ADTech 2</option><option>Biology 1</option><option>Chemistry 1</option><option>Computer Science 2</option><option>Earth Science 1</option><option>English 2</option><option>Filipino 2</option><option>Health 2</option><option>Math 2A - Algebra</option><option>Math 2B - Geometry</option><option>Music 2</option><option>Physical Education 2</option><option>Physics 1</option><option>Social Science 2</option><option>Values Education 2</option></select></div>
+    <div class="field"><label>Calendar color</label><div class="color-preview" id="entryColorPreview">Subject color</div></div>
+   </div></div>
+   <div class="editor-row"><span class="editor-icon">☑</span><div class="flag-options editor-flags">
+    <label class="checkline"><input type="checkbox" id="assessmentScheduled"> Assessment scheduled? <span>(e.g. quiz)</span></label>
+    <label class="checkline"><input type="checkbox" id="graded"> Graded?</label>
+   </div></div>
+   <div class="editor-row"><span class="editor-icon">☰</span><div class="field full"><label for="notes">Details</label><textarea id="notes" maxlength="500" placeholder="Add description"></textarea></div></div>
+  </div>
+  <input type="hidden" id="category"><input type="hidden" id="platform"><input type="hidden" id="topic"><input type="hidden" id="weight"><input type="hidden" id="difficulty"><input type="hidden" id="score"><input type="hidden" id="maxScore"><input type="hidden" id="status">
+  <div class="editor-footer"><button type="button" class="editor-delete" id="deleteEntryBtn" style="display:none">Remove</button><div class="editor-footer-right"><button type="button" class="btn light" id="cancel">Cancel</button><button class="btn primary" type="submit">Save</button></div></div>
+ </form>
+</div></div>
+<div class="modalbg" id="gradeModalbg"><div class="modal" role="dialog" aria-modal="true"><div class="modalhead"><h2 id="gradeModalTitle">Grade task</h2><button class="close" id="gradeClose">×</button></div><form id="gradeForm"><input type="hidden" id="gradeId"><div class="formgrid"><div class="field"><label for="gradeTaskName">Task name *</label><input id="gradeTaskName" required maxlength="90"></div><div class="field"><label for="gradeSubject">Subject *</label><select id="gradeSubject" required><option value="">Choose a subject</option><option>ADTech 2</option><option>Biology 1</option><option>Chemistry 1</option><option>Computer Science 2</option><option>Earth Science 1</option><option>English 2</option><option>Filipino 2</option><option>Health 2</option><option>Math 2A - Algebra</option><option>Math 2B - Geometry</option><option>Music 2</option><option>Physical Education 2</option><option>Physics 1</option><option>Social Science 2</option><option>Values Education 2</option></select></div><div class="field"><label for="gradeWeight">Final-grade weight (%)</label><input id="gradeWeight" type="number" min="0" max="100" step=".01" value="0"></div><div class="field"><label for="gradeScore">Score earned</label><input id="gradeScore" type="number" min="0" step="any" placeholder="Leave blank if ungraded"></div><div class="field"><label for="gradeMax">Maximum score</label><input id="gradeMax" type="number" min=".01" step="any" placeholder="e.g. 20"></div><div class="field"><label for="gradeStatus">Status</label><select id="gradeStatus"><option value="pending">Pending</option><option value="completed">Completed</option></select></div></div><div class="actions"><button type="button" class="btn light" id="gradeCancel">Cancel</button><button class="btn primary" type="submit">Save grade task</button></div></form></div></div><div class="schedule-manager" id="scheduleManager" aria-hidden="true"><div class="schedule-manager-card" role="dialog" aria-modal="true" aria-labelledby="scheduleManagerTitle"><div class="schedule-manager-head"><div><h2 id="scheduleManagerTitle">Daily schedules</h2></div><div style="display:flex;gap:8px;align-items:center"><button class="mini" id="newScheduleTemplate" type="button">＋ New schedule</button><button class="close" id="closeScheduleManager" type="button">×</button></div></div><div class="schedule-template-list" id="scheduleTemplateList"></div><div id="scheduleEditor"><div class="schedule-editor-grid"><div class="field"><label for="scheduleName">Schedule name</label><input id="scheduleName" maxlength="40" placeholder="e.g. Monday Schedule"></div></div><div class="panelhead" style="margin-top:12px"><div><h2>Class periods</h2></div><button class="mini" id="addSchedulePeriod" type="button">＋ Add period</button></div><div class="no-classes-option">Select “No Classes” in the subject list to mark this day as class-free. Regular periods will be hidden for that day.</div><div class="schedule-periods" id="schedulePeriods"></div><div class="schedule-manager-actions"><button class="mini del" id="deleteScheduleTemplate" type="button">Remove schedule</button><div class="right"><button class="btn light" id="cancelScheduleManager" type="button">Cancel</button><button class="btn primary" id="saveScheduleTemplate" type="button">Save schedule</button></div></div></div></div></div><div class="template-task-choice" id="templateTaskChoice"><div class="template-task-card"><h3 id="templateChoiceTitle">Add to this class</h3><p id="templateChoiceSubject"></p><button id="templateAddAssessment" type="button">＋ Add assessment (e.g. quiz)</button><button id="templateAddSubmission" type="button">＋ Add submission</button><button class="cancel-choice" id="templateChoiceCancel" type="button">Cancel</button></div></div><div class="schedule-manager" id="exportScheduleModal" aria-hidden="true"><div class="schedule-manager-card" style="width:min(460px,100%)"><div class="schedule-manager-head"><div><h2>Save schedule as a picture</h2></div><button class="close" id="closeExportSchedule">×</button></div><div class="field"><label for="exportFrom">From</label><input id="exportFrom" type="date" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:9px"></div><div class="field" style="margin-top:10px"><label for="exportTo">Through</label><input id="exportTo" type="date" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:9px"></div><div class="schedule-manager-actions"><span></span><div class="right"><button class="btn light" id="cancelExportSchedule">Cancel</button><button class="btn primary" id="downloadSchedulePicture">Save PNG</button></div></div></div></div><div class="toast" id="toast"></div>
+<script>
+const SUBJECTS=['ADTech 2','Biology 1','Chemistry 1','Computer Science 2','Earth Science 1','English 2','Filipino 2','Health 2','Math 2A - Algebra','Math 2B - Geometry','Music 2','Physical Education 2','Physics 1','Social Science 2','Values Education 2'];
+const $=id=>document.getElementById(id), STORE='studyhub-v2-activities', TARGETS='studyhub-v2-targets';
+let items=[];try{items=JSON.parse(localStorage.getItem(STORE)||'[]');if(!Array.isArray(items))items=[];items=items.map(a=>({...a,entryType:(a.entryType==='submission'||a.entryType==='activity'||a.entryType==='timedEvent'?'task':(a.entryType==='event'?'task':(a.entryType||'task'))),repeatDays:Array.isArray(a.repeatDays)?a.repeatDays:[],category:a.category||'Submission',platform:a.platform||'None',gradeTask:!!a.gradeTask,assessmentScheduled:!!a.assessmentScheduled||(a.entryType||'activity')==='activity',startTime:a.startTime||'',endTime:a.endTime||''}))}catch{items=[]}
+let targets={};try{targets=JSON.parse(localStorage.getItem(TARGETS)||'{}')}catch{targets={}}
+let chosen=SUBJECTS[0], view='dashboard', calendarMode='month', hasSelectedDate=false, cursor=new Date(), selectedDay=new Date();cursor=new Date(cursor.getFullYear(),cursor.getMonth(),1);selectedDay.setHours(0,0,0,0);
+const today=new Date();today.setHours(0,0,0,0);let todayNow=new Date();
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=n=>Number(n).toLocaleString(undefined,{maximumFractionDigits:2});
+const dateOf=s=>s?new Date(s+'T00:00:00'):null;
+const scored=a=>a.score!==''&&a.score!==null&&a.score!==undefined&&a.maxScore>0;
+const keyDate=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+function assessmentItems(){return items.filter(a=>a.gradeTask===true)}
+function calc(s){let arr=assessmentItems().filter(a=>a.subject===s),earned=0,scoredW=0,remaining=0,totalW=0;for(const a of arr){let w=Number(a.weight)||0;totalW+=w;if(scored(a)){earned+=Math.max(0,Math.min(100,Number(a.score)/Number(a.maxScore)*100))*w/100;scoredW+=w}else remaining+=w}return{arr,earned,scoredW,remaining,totalW,untracked:Math.max(0,100-totalW),current:scoredW?earned/scoredW*100:null,maximum:Math.min(100,earned+remaining+Math.max(0,100-totalW))}}
+function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2200)}
+function save(){localStorage.setItem(STORE,JSON.stringify(items));render();if(view==='calendar'){if(window.studyHubCalendarV27)window.studyHubCalendarV27.render();else renderCalendar()}if(view==='grades')renderGrades();renderProgress()}
+function go(v){view=v;document.querySelectorAll('.view').forEach(e=>e.classList.toggle('active',e.id==='view-'+v));document.querySelectorAll('[data-view]').forEach(e=>e.classList.toggle('active',e.dataset.view===v));$('pageTitle').textContent=({dashboard:'Dashboard',assessments:'Assessments',calendar:'Calendar',grades:'Grades'})[v];if(v==='assessments')renderTable();if(v==='calendar'){if(window.studyHubCalendarV27)window.studyHubCalendarV27.render();else renderCalendar()}if(v==='grades')renderGrades();renderProgress()}
+document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>go(b.dataset.view));document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
+function render(){let tracked=assessmentItems(),active=SUBJECTS.filter(s=>tracked.some(a=>a.subject===s)),done=tracked.filter(a=>a.status==='completed').length;
+$('statTotal').textContent=tracked.length;$('statUpcoming').textContent=tracked.filter(a=>a.status!=='completed').length;$('statComplete').textContent=(tracked.length?Math.round(done/tracked.length*100):0)+'%';$('statSubjects').textContent=active.length;
+$('subjectOverview').innerHTML=active.length?active.map((s,i)=>{let g=calc(s),pc=g.arr.length?Math.round(g.arr.filter(a=>a.status==='completed').length/g.arr.length*100):0;return `<div><div class="subjectrow"><div class="subicon">${['🧪','🧬','⚗️','💻','🌍','📚','✍️','❤️','📐','📏','🎵','🏃','⚛️','🏛️','🌱'][SUBJECTS.indexOf(s)]}</div><div><div class="subname">${esc(s)}</div><div class="muted">${g.arr.length} activities · ${pc}/100 completed</div></div><b style="font-size:12px">${g.current===null?'—':fmt(g.current)+'%'}</b></div><div class="progress"><span style="width:${pc}%"></span></div></div>`}).join(''):'<div class="empty">Add your first activity to see your subject overview.</div>';
+let next=tracked.filter(a=>a.status!=='completed').sort((a,b)=>(a.due||'9999').localeCompare(b.due||'9999')).slice(0,4);$('upcomingList').innerHTML=next.length?next.map(a=>{let d=dateOf(a.due);return `<div class="due"><div class="datebox"><b>${d?d.getDate():'—'}</b><small>${d?d.toLocaleDateString(undefined,{month:'short'}):'No date'}</small></div><div class="duetext"><b>${esc(a.title)}</b><small>${esc(a.category||'Assessments (In class)')} · ${esc(a.subject)} · ${a.startTime?esc(a.startTime)+' · ':''}${esc(a.platform||'None')}</small></div><span class="tag">${esc(a.category||'')}</span></div>`}).join(''):'<div class="empty">No pending activities. Add a task whenever you get a new requirement.</div>';
+let sel=$('filterSubject').value;$('filterSubject').innerHTML='<option value="">All subjects</option>'+SUBJECTS.map(s=>`<option>${esc(s)}</option>`).join('');$('filterSubject').value=sel;
+renderTable();if(view==='grades')renderGrades();if(view==='calendar')renderCalendar();renderProgress()}
+function showDeleteConfirm(id){const a=items.find(x=>x.id===id);if(!a)return;let layer=$('deleteConfirmLayer');if(!layer){layer=document.createElement('div');layer.id='deleteConfirmLayer';layer.className='delete-confirm';layer.innerHTML=`<div class="delete-card" role="dialog" aria-modal="true" aria-labelledby="deleteConfirmTitle"><h3 id="deleteConfirmTitle">Remove this item?</h3><p id="deleteConfirmText"></p><div class="delete-actions"><button class="keep" type="button" id="keepItem">Keep it</button><button class="sure" type="button" id="confirmRemove">Remove</button></div></div>`;document.body.appendChild(layer)}$('deleteConfirmText').textContent='“'+a.title+'” will be removed from your calendar and task list.';layer.classList.add('show');const finish=()=>layer.classList.remove('show');$('keepItem').onclick=finish;$('confirmRemove').onclick=()=>{items=items.filter(x=>x.id!==id);localStorage.setItem(STORE,JSON.stringify(items));finish();$('modalbg').classList.remove('show');render();renderTable();renderProgress();if(window.studyHubCalendarV27)window.studyHubCalendarV27.render();toast('Item removed.')};layer.onclick=e=>{if(e.target===layer)finish()}}
+function renderTable(){let q=($('search')?.value||'').toLowerCase(),s=$('filterSubject')?.value||'',st=$('filterStatus')?.value||'';let arr=assessmentItems().filter(a=>(!q||[a.title,a.subject,a.topic,a.notes,a.category,a.platform].join(' ').toLowerCase().includes(q))&&(!s||a.subject===s)&&(!st||a.status===st)).sort((a,b)=>(a.due||'9999').localeCompare(b.due||'9999')||(a.startTime||'').localeCompare(b.startTime||''));$('rows').innerHTML=arr.map(a=>`<tr><td><b>${esc(a.title)}</b></td><td><span class="typepill">${esc(a.category||'Assessments (In class)')}</span><div class="muted">${esc(a.platform||'None')}</div></td><td>${esc(a.subject||'N/A')}</td><td>${a.due?esc(dateOf(a.due).toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'})):'Not set'}<div class="muted">${a.startTime?esc(a.startTime)+(a.endTime?'–'+esc(a.endTime):''):'No time set'}</div></td><td>${fmt(a.weight)}%</td><td>${scored(a)?`${fmt(a.score)}/${fmt(a.maxScore)} (${fmt(a.score/a.maxScore*100)}%)`:'—'}</td><td><span class="tag ${a.status==='completed'?'done':''}">${a.status==='completed'?'Completed':'Pending'}</span></td><td><button class="mini" data-grade-edit="${a.id}">Grade</button> <button class="mini del" data-delete="${a.id}">Remove</button></td></tr>`).join('');$('tableEmpty').style.display=arr.length?'none':'block'}
+function renderGrades(){let list=SUBJECTS.map(s=>{let g=calc(s),pc=g.arr.length?Math.round(g.arr.filter(a=>a.status==='completed').length/g.arr.length*100):0;return{s,g,pc,target:Number(targets[s]??90)}});$('gradeOverview').innerHTML=list.map(o=>`<button class="subjectcard ${o.s===chosen?'selected':''}" data-card="${esc(o.s)}"><h3>${esc(o.s)}</h3><div class="pct">${o.pc}/100 completed</div><div class="progress"><span style="width:${o.pc}%"></span></div><div class="pair"><div><small>Current grade</small><b>${o.g.current===null?'—':fmt(o.g.current)+'%'}</b></div><div><small>Max grade</small><b>${fmt(o.g.maximum)}%</b></div></div><div class="targethint">Target ${fmt(o.target)}% · View breakdown →</div></button>`).join('');document.querySelectorAll('[data-card]').forEach(b=>b.onclick=()=>{chosen=b.dataset.card;renderGrades()});
+let g=calc(chosen),target=Number(targets[chosen]??90),remain=g.remaining+g.untracked,earned=Math.min(100,Math.max(0,g.earned)),avail=Math.min(100-earned,remain),other=Math.max(0,100-earned-avail),need=target-g.earned,neededAvg=remain>0?Math.max(0,need)/remain*100:(need<=0?0:null),possible=g.maximum+0.001>=target;
+$('targetTitle').textContent=chosen;
+let stops=earned+avail;
+$('targetDetail').innerHTML=`<div class="targetselect"><label for="goal">Target goal</label><select id="goal"><option value="75" ${target===75?'selected':''}>75%</option><option value="80" ${target===80?'selected':''}>80%</option><option value="84" ${target===84?'selected':''}>84% · example 1.5 threshold</option><option value="90" ${target===90?'selected':''}>90%</option><option value="95" ${target===95?'selected':''}>95%</option><option value="96" ${target===96?'selected':''}>96% · 1.00 threshold</option><option value="100" ${target===100?'selected':''}>100%</option></select><span class="note">Saved separately for each subject.</span></div><div class="targetlayout"><div class="donutrow"><div class="donut" style="background:conic-gradient(#356df3 0% ${earned}%,#46d7c8 ${earned}% ${stops}%,#e8edf5 ${stops}% 100%)"><div class="donutcenter"><b>${fmt(earned)}%</b><small>earned contribution</small></div></div><div class="legend"><span><i class="swatch" style="background:#356df3"></i>Earned: <b>${fmt(earned)}%</b></span><span><i class="swatch" style="background:#46d7c8"></i>Still available: <b>${fmt(avail)}%</b></span><span><i class="swatch" style="background:#e8edf5"></i>Other/unentered: <b>${fmt(other)}%</b></span></div></div><div><div class="reportbox"><b>${possible?'🎯 Target outlook':'⚠ Target may be out of reach'}</b><p>${neededAvg===null?(need<=0?'You have already earned enough weighted contribution to meet this target.':'No remaining weight is available. Check the scores and weights entered.'):`To reach ${fmt(target)}%, you need an average of ${fmt(neededAvg)}% across the remaining ${fmt(remain)}% of the final grade${neededAvg>100?' . This is not possible without changing the entered data.':'.'}`}</p></div><div class="metrics"><div class="metric"><small>Current grade</small><b>${g.current===null?'—':fmt(g.current)+'%'}</b></div><div class="metric"><small>Maximum grade</small><b>${fmt(g.maximum)}%</b></div><div class="metric"><small>Completion</small><b>${g.arr.length?Math.round(g.arr.filter(a=>a.status==='completed').length/g.arr.length*100):0}/100</b></div></div><p class="note">Scored weight: ${fmt(g.scoredW)}%. Unscored weight: ${fmt(g.remaining)}%. Not-yet-entered weight: ${fmt(g.untracked)}%.</p></div></div>`;
+$('goal').onchange=e=>{targets[chosen]=Number(e.target.value);localStorage.setItem(TARGETS,JSON.stringify(targets));renderGrades()}}
+function timeLabel(a){if(a.startTime&&a.endTime)return formatClock(a.startTime)+'–'+formatClock(a.endTime);if(a.startTime)return formatClock(a.startTime);if(a.endTime)return 'Ends '+formatClock(a.endTime);return 'Time not set'}
+function formatClock(value){if(!value)return '';let parts=String(value).split(':');let h=Number(parts[0]),m=Number(parts[1]||0);if(!Number.isFinite(h)||!Number.isFinite(m))return String(value);let suffix=h>=12?'PM':'AM',hour=h%12||12;return hour+(m?':'+String(m).padStart(2,'0'):'')+' '+suffix}
+const COLOR_KEY='studyhub-v25-subject-colors';
+const DEFAULT_COLORS=['#E76F51','#2A9D8F','#E9C46A','#8E6CCF','#F4A261','#D45087','#00A6A6','#8AAB3D','#5271D9','#BC6C25','#168AAD','#577590','#C44536','#9B5DE5','#3A8F8C'];
+let subjectColors={};try{subjectColors=JSON.parse(localStorage.getItem(COLOR_KEY)||'{}')}catch{subjectColors={}}
+// v2.7.12: apply a more distinct starter palette once, while keeping later user edits.
+if(!localStorage.getItem('studyhub-v2712-contrast-palette')){subjectColors=Object.fromEntries(SUBJECTS.map((s,i)=>[s,DEFAULT_COLORS[i]]));localStorage.setItem(COLOR_KEY,JSON.stringify(subjectColors));localStorage.setItem('studyhub-v2712-contrast-palette','1')}
+function subjectColor(s){let i=SUBJECTS.indexOf(s);return subjectColors[s]||DEFAULT_COLORS[(i<0?0:i)%DEFAULT_COLORS.length]}
+function colorInk(hex){return '#000000'}
+function colorWithAlpha(hex,alpha='24'){return hex+alpha}
+function renderSubjectColors(){let el=$('subjectColors');if(!el)return;el.innerHTML=SUBJECTS.map((sub,i)=>`<label class="subjectcolorrow"><span class="dot" style="background:${subjectColor(sub)}"></span>${esc(sub)}<input type="color" value="${subjectColor(sub)}" data-subject-color="${esc(sub)}" aria-label="Color for ${esc(sub)}"></label>`).join('');el.querySelectorAll('[data-subject-color]').forEach(inp=>inp.oninput=()=>{subjectColors[inp.dataset.subjectColor]=inp.value;localStorage.setItem(COLOR_KEY,JSON.stringify(subjectColors));if(window.studyHubCalendarV27)window.studyHubCalendarV27.render();else renderCalendar()})}
+function occursOn(a,d){if(a.entryType==='gradeTask')return false;const k=keyDate(d),dow=d.getDay();if(a.repeatMode==='daily')return !!a.due&&k>=a.due;if(a.repeatMode==='weekly')return !!a.due&&k>=a.due&&dow===dateOf(a.due).getDay();if(a.entryType==='schedule'&&Array.isArray(a.repeatDays)&&a.repeatDays.length)return a.repeatDays.includes(dow);return a.due===k}
+function dayItems(d){const all=items.filter(a=>occursOn(a,d));const noClasses=all.some(a=>a.entryType==='holiday');return all.filter(a=>!(noClasses&&a.entryType==='schedule')).sort((a,b)=>(a.startTime||'99:99').localeCompare(b.startTime||''))}
+function renderTimeline(days){
+ const startHour=7,endHour=21,px=64,total=(endHour-startHour)*px;
+ const labels=Array.from({length:endHour-startHour+1},(_,i)=>{
+  const h=startHour+i,ampm=h>=12?'PM':'AM',v=h%12||12;
+  return `<div class="hourlabel">${v} ${ampm}</div>`;
+ }).join('');
+ const single=days.length===1;
+ const allDay=`<div class="alldayrow ${single?'daymode':''}">
+  <div class="alldaylabel">ALL DAY</div>
+  ${days.map(d=>{
+   const full=dayItems(d).filter(a=>a.entryType==='holiday'||a.entryType==='event');
+   return `<div class="alldaycell">${full.map(a=>`<div class="alldaylabeltext ${a.entryType==='event'?'eventlabel':'suspensionlabel'}" data-edit="${a.id}">${esc(a.title)}</div>`).join('')}</div>`;
+  }).join('')}
+ </div>`;
+ const cols=days.map(d=>{
+  const raw=dayItems(d).filter(a=>(a.entryType==='schedule'||a.entryType==='task')&&a.startTime).map(a=>{
+   const due=String(a.startTime||'07:45').split(':').map(Number);
+   const dueMins=due[0]*60+due[1];
+   const start=a.entryType==='task'?Math.max(0,dueMins-45):(()=>{const p=String(a.startTime).split(':').map(Number);return p[0]*60+p[1]})();
+   const end=a.entryType==='task'?dueMins:(()=>{const p=String(a.endTime||a.startTime).split(':').map(Number);return p[0]*60+p[1]})();
+   return {...a,_start:start,_end:Math.max(start+15,end)};
+  }).filter(a=>a._start<endHour*60&&a._end>startHour*60).sort((a,b)=>a._start-b._start||a._end-b._end);
+  // Group overlapping appointments and lay them out side-by-side, like Google Calendar.
+  const clusters=[];
+  raw.forEach(a=>{
+   let cluster=clusters[clusters.length-1];
+   if(!cluster||a._start>=cluster.end){cluster={items:[],end:a._end};clusters.push(cluster)}
+   cluster.items.push(a);cluster.end=Math.max(cluster.end,a._end);
+  });
+  const positions=new Map();
+  clusters.forEach(cluster=>{
+   const laneEnds=[];
+   cluster.items.forEach(a=>{
+    let lane=laneEnds.findIndex(end=>end<=a._start);
+    if(lane<0)lane=laneEnds.length;
+    laneEnds[lane]=a._end;
+    positions.set(a.id,{lane,count:0});
+   });
+   const count=laneEnds.length;
+   cluster.items.forEach(a=>positions.set(a.id,{lane:positions.get(a.id).lane,count}));
+  });
+  const cards=raw.map(a=>{
+   const top=(_=>((Math.max(startHour*60,a._start)-startHour*60)/60)*px)();
+   const height=Math.max(30,((Math.min(endHour*60,a._end)-Math.max(startHour*60,a._start))/60)*px);
+   const pos=positions.get(a.id)||{lane:0,count:1},width=100/pos.count,left=width*pos.lane;
+   const cls=a.entryType==='schedule'?'schedule':'taskitem';
+   const col=a.subject&&a.subject!=='N/A'?subjectColor(a.subject):'#3978e8';
+   const when=a.entryType==='schedule'?`${formatClock(a.startTime)}–${formatClock(a.endTime)}`:`Due ${formatClock(a.startTime)}`;
+   return `<div class="timeevent ${cls}" style="top:${top}px;height:${height}px;left:calc(${left}% + 3px);width:calc(${width}% - 6px);right:auto;--subject-color:${col};--subject-bg:${colorWithAlpha(col,'35')};--subject-ink:${colorInk(col)}" data-edit="${a.id}" title="Click to edit">
+    <b>${esc(a.title)}</b><small>${esc(when)}${a.subject&&a.subject!=='N/A'?' · '+esc(a.subject):''}</small>
+    ${a.notes?`<small class="event-details">${esc(a.notes)}</small>`:''}
+   </div>`;
+  }).join('');
+  const isToday=keyDate(d)===keyDate(today);
+  let now='';
+  if(isToday){
+   const mins=todayNow.getHours()*60+todayNow.getMinutes(),top=(mins-startHour*60)/60*px;
+   if(top>=0&&top<=total)now=`<div class="nowline" style="top:${top}px"><span class="nowlabel">NOW ${todayNow.toLocaleTimeString([],{hour:'numeric',minute:'2-digit'})}</span></div>`;
+  }
+  return `<div class="daytimeline ${[0,6].includes(d.getDay())?'weekendday':''}">
+   <div class="timehead">${d.toLocaleDateString(undefined,{weekday:'long'})}<br><span style="font-weight:500">${d.toLocaleDateString(undefined,{month:'short',day:'numeric'})}${isToday?' · TODAY':''}</span></div>
+   <div class="timecol ${[0,6].includes(d.getDay())?'weekendcol':''} ${isToday?'todaycol':''}" data-colday="${keyDate(d)}">${cards}${now}</div>
+  </div>`;
+ }).join('');
+ return `${allDay}<div class="timeline daymode"><div class="timeaxis"><div class="timehead">TIME</div>${labels}</div>${cols}</div>`;
+}
+function renderCalendar(){let y=cursor.getFullYear(),m=cursor.getMonth();$('monthLabel').textContent=cursor.toLocaleDateString(undefined,{month:'long',year:'numeric'});$('monthCalendar').style.display='block';let first=new Date(y,m,1),start=new Date(y,m,1-first.getDay()),cells='';for(let i=0;i<42;i++){let d=new Date(start);d.setDate(start.getDate()+i);let events=dayItems(d),whole=events.filter(a=>a.entryType==='holiday'||a.entryType==='event'),normal=events.filter(a=>a.entryType!=='holiday'&&a.entryType!=='event');let dayLabel=whole.length?whole.map(a=>a.title).join(' · '):'';let bars=normal.slice(0,4).map(a=>{let col=a.subject?subjectColor(a.subject):'#3978e8';let time=a.entryType==='schedule'?(a.startTime?formatClock(a.startTime)+' ':''):(a.startTime?formatClock(a.startTime)+' ':'');return `<div class="month-eventbar" style="--bar:${col}" title="${esc(a.title)}">${time}${esc(a.title)}</div>`}).join('');let more=normal.length>4?`<div class="month-more">+${normal.length-4} more</div>`:'';cells+=`<button class="calday ${d.getMonth()!==m?'other':''} ${[0,6].includes(d.getDay())?'weekend':''} ${keyDate(d)===keyDate(today)?'today':''} ${hasSelectedDate&&keyDate(d)===keyDate(selectedDay)?'selected':''}" data-day="${keyDate(d)}"><div class="daycellhead"><span class="daynum">${d.getDate()}</span>${dayLabel?`<span class="daycelltitle" title="${esc(dayLabel)}">${esc(dayLabel)}</span>`:''}</div><div class="month-eventbars">${bars}${more}</div></button>`}$('calGrid').innerHTML=cells;document.querySelectorAll('[data-day]').forEach(b=>b.onclick=()=>{selectedDay=new Date(b.dataset.day+'T00:00:00');cursor=new Date(selectedDay.getFullYear(),selectedDay.getMonth(),1);hasSelectedDate=true;renderCalendar()});let detail=$('dayDetail');detail.classList.toggle('open',hasSelectedDate);detail.setAttribute('aria-hidden',String(!hasSelectedDate));if(hasSelectedDate){let day=dayItems(selectedDay);$('dayTitle').textContent=selectedDay.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric',year:'numeric'});$('weekCalendar').style.display='block';$('weekCalendar').innerHTML=renderTimeline([selectedDay]);$('weekCalendar').querySelectorAll('[data-edit]').forEach(el=>el.onclick=()=>{let a=items.find(x=>x.id===el.dataset.edit);if(a)openModal(a)});let listOnly=day.filter(a=>a.entryType==='task'&&!a.startTime);$('dayList').innerHTML=listOnly.length?`<div class="daylist-pills">${listOnly.map(a=>{let col=a.subject?subjectColor(a.subject):(a.entryType==='holiday'?'#9864cf':a.entryType==='event'?'#e0a52e':a.status==='completed'?'#28a883':'#356df3');let when=(a.entryType==='holiday'||a.entryType==='event')?'Whole day':(a.startTime?'Due '+esc(formatClock(a.startTime)):esc(timeLabel(a)));let kind='Task'+(a.assessmentScheduled?' · Assessment scheduled':'');return `<div class="daypill" style="--pill-color:${col}" data-edit="${a.id}"><span class="daypill-mark"></span><div class="daypill-main"><b>${esc(a.title)}</b><small>${when} · ${kind}${a.subject&&a.subject!=='N/A'?' · '+esc(a.subject):''}${a.repeatMode==='daily'?' · Daily':a.repeatMode==='weekly'?' · Weekly':''}${a.gradeTask?' · Graded':''}</small>${a.notes?`<span class="daypill-details">${esc(a.notes)}</span>`:''}</div><div class="daypill-actions"><button class="mini" data-grade-edit="${a.id}">Grade</button><button class="mini del" data-delete="${a.id}">Remove</button></div></div>`}).join('')}</div>`:day.length?'':'<div class="day-empty"><div class="day-empty-icon">✦</div><b>Your day is clear.</b><span>Add a class, event, task, or anything else with the ＋ button.</span></div>'}else{$('weekCalendar').style.display='none';$('dayList').innerHTML=''}}
+function renderProgress(){if(!$('report'))return;let tracked=assessmentItems(),done=tracked.filter(a=>a.status==='completed').length,over=tracked.filter(a=>a.status!=='completed'&&a.due&&dateOf(a.due)<today),soon=tracked.filter(a=>a.status!=='completed'&&a.due&&dateOf(a.due)>=today&&dateOf(a.due)<=new Date(today.getTime()+7*86400000)).sort((a,b)=>(a.due||'').localeCompare(b.due||'')||(a.startTime||'').localeCompare(b.startTime||'')),hard=tracked.filter(a=>a.status!=='completed'&&a.difficulty==='Hard'),miss=tracked.filter(a=>a.status==='completed'&&!scored(a));$('report').innerHTML=`<div class="reportbox"><b>📊 Progress snapshot</b><p><strong style="font-size:23px;color:var(--ink)">${tracked.length?Math.round(done/tracked.length*100):0}%</strong><br>${done} of ${tracked.length} assessments/tasks completed. ${soon.length} deadline(s) in the next 7 days.</p></div><div class="reportbox"><b>📌 First priority</b><p>${over.length?over.length+' overdue: '+over.slice(0,3).map(a=>esc(a.title)).join(', '):soon.length?'Next up: '+esc(soon[0].title)+' · '+esc(soon[0].due)+(soon[0].startTime?' at '+esc(soon[0].startTime):''):'No overdue or next-week activities recorded yet.'}</p></div><div class="reportbox"><b>⚡ Needs extra time</b><p>${hard.length?hard.length+' pending hard task(s): '+hard.slice(0,3).map(a=>esc(a.title)).join(', '):'No pending tasks marked Hard.'}</p></div><div class="reportbox"><b>🧮 Scores to update</b><p>${miss.length?miss.length+' completed activities have no score yet.':'No completed activity is missing a score, based on your entries.'}</p></div>`}
+function syncEntryFields(){
+ const t=$('entryType').value,sch=t==='schedule';
+ const startField=$('startField'),endField=$('endField');
+ if(startField)startField.classList.remove('hiddenfield');
+ if(endField)endField.classList.toggle('hiddenfield',!sch);
+ $('startTime').required=true;
+ $('endTime').required=sch;
+ const label=$('startTime').parentElement?.querySelector('label');
+ if(label)label.textContent=sch?'Start time':'Deadline';
+ if(!sch)$('endTime').value='';
+}
+function openModal(a=null){$('activityForm').reset();$('editId').value=a?.id||'';$('modalTitle').textContent=a?'Edit calendar entry':'Add calendar entry';$('title').placeholder='e.g. Filipino Long Test / Math 2A Class';$('subject').value=a?.subject||'N/A';$('entryType').value=a?.entryType==='schedule'?'schedule':'task';$('repeatMode').value=a?.repeatMode||((a?.repeatDays?.length)?'weekly':'once');$('startTime').value=a?.startTime||'';$('endTime').value=a?.endTime||'';$('notes').value=a?.notes||'';$('assessmentScheduled').checked=!!a?.assessmentScheduled||a?.entryType==='activity';$('graded').checked=!!a?.gradeTask;$('due').value=a?.due||keyDate(selectedDay);$('category').value=a?.category||'';$('platform').value=a?.platform||'None';$('topic').value=a?.topic||'';$('weight').value=a?.weight??0;$('difficulty').value=a?.difficulty||'Medium';$('score').value=a?.score??'';$('maxScore').value=a?.maxScore??'';$('status').value=a?.status||'pending';syncEntryFields();$('modalbg').classList.add('show');$('title').focus()}
+function openGradeModal(a=null){$('gradeForm').reset();$('gradeId').value=a?.id||'';$('gradeModalTitle').textContent=a?'Edit grade task':'Add grade task';$('gradeTaskName').value=a?.title||'';$('gradeSubject').value=a?.subject&&a.subject!=='N/A'?a.subject:'';$('gradeWeight').value=a?.weight??0;$('gradeScore').value=a?.score??'';$('gradeMax').value=a?.maxScore??'';$('gradeStatus').value=a?.status||'pending';$('gradeModalbg').classList.add('show');$('gradeTaskName').focus()}
+$('gradeClose').onclick=$('gradeCancel').onclick=()=>$('gradeModalbg').classList.remove('show');$('gradeModalbg').onclick=e=>{if(e.target===$('gradeModalbg'))$('gradeModalbg').classList.remove('show')};
+$('gradeForm').onsubmit=e=>{e.preventDefault();let id=$('gradeId').value||String(Date.now())+Math.random().toString(16).slice(2),a=items.find(x=>x.id===id),score=$('gradeScore').value,max=$('gradeMax').value,w=Number($('gradeWeight').value);if(w<0||w>100){toast('Weight must be between 0 and 100%.');return}if((score!==''&&max==='')||(score===''&&max!=='')){toast('Enter both score and maximum score, or leave both blank.');return}if(max!==''&&Number(max)<=0){toast('Maximum score must be above zero.');return}if(score!==''&&Number(score)>Number(max)){toast('Score cannot exceed maximum score.');return}if(a){a.title=$('gradeTaskName').value.trim();a.subject=$('gradeSubject').value;a.weight=w;a.score=score===''?'':Number(score);a.maxScore=max===''?'':Number(max);a.status=$('gradeStatus').value;a.gradeTask=true}else{items.push({id,title:$('gradeTaskName').value.trim(),subject:$('gradeSubject').value,entryType:'gradeTask',gradeTask:true,weight:w,score:score===''?'':Number(score),maxScore:max===''?'':Number(max),status:$('gradeStatus').value,due:'',startTime:'',endTime:'',repeatMode:'once',notes:''})}save();$('gradeModalbg').classList.remove('show');toast('Grade task saved.')};
+function closeModal(){$('modalbg').classList.remove('show')}
+$('addTop').onclick=()=>openModal();$('addAssessment').onclick=()=>openGradeModal();$('close').onclick=$('cancel').onclick=closeModal;$('modalbg').onclick=e=>{if(e.target===$('modalbg'))closeModal()};document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+const THEME_KEY='studyhub-v2-theme';const savedTheme=localStorage.getItem(THEME_KEY)||'light';document.body.dataset.theme=savedTheme;$('themeSelect').value=savedTheme;$('themeSelect').onchange=()=>{document.body.dataset.theme=$('themeSelect').value;localStorage.setItem(THEME_KEY,$('themeSelect').value)};
+$('dayAdd').onclick=()=>{if(!hasSelectedDate)return;openModal();$('due').value=keyDate(selectedDay);$('title').focus()};$('closeDay').onclick=()=>{hasSelectedDate=false;renderCalendar()};$('dayDetail').onclick=e=>{if(e.target===$('dayDetail'))$('closeDay').click()};$('entryType').onchange=syncEntryFields;
+$('activityForm').onsubmit=e=>{e.preventDefault();let type=$('entryType').value,sch=type==='schedule',rep=$('repeatMode').value,st=$('startTime').value,en=$('endTime').value;if(!st){toast(sch?'Add a start time for this schedule.':'Add a deadline time for this task.');return}if(sch&&(!en||en<=st)){toast('Schedule end time must be after its start time.');return}let id=$('editId').value||String(Date.now())+Math.random().toString(16).slice(2),old=items.find(x=>x.id===id),isGraded=$('graded').checked;let a={...(old||{}),id,title:$('title').value.trim(),subject:$('subject').value||'N/A',entryType:type,repeatMode:rep,repeatDays:[],due:$('due').value||keyDate(selectedDay),startTime:st,endTime:sch?en:'',assessmentScheduled:$('assessmentScheduled').checked,gradeTask:isGraded,category:$('assessmentScheduled').checked?'Class Assessment':'Task',platform:'None',topic:'',weight:old?.weight??0,difficulty:'',score:old?.score??'',maxScore:old?.maxScore??'',status:old?.status||'pending',notes:$('notes').value.trim()};let i=items.findIndex(x=>x.id===id);if(i>=0)items[i]=a;else items.push(a);save();closeModal();toast(i>=0?'Calendar entry updated.':'Calendar entry saved.')};
+document.addEventListener('click',e=>{let ge=e.target.closest('[data-grade-edit]'),ed=e.target.closest('[data-edit]'),del=e.target.closest('[data-delete]');if(ge){let a=items.find(x=>x.id===ge.dataset.gradeEdit);if(a)openGradeModal(a)}else if(ed){let a=items.find(x=>x.id===ed.dataset.edit);if(a)openModal(a)}if(del){e.preventDefault();showDeleteConfirm(del.dataset.delete)}});
+document.querySelector('.colorpanel summary').addEventListener('click',()=>setTimeout(renderSubjectColors,0));$('search').oninput=renderTable;$('filterSubject').onchange=renderTable;$('filterStatus').onchange=renderTable;$('prev').onclick=()=>{cursor=new Date(cursor.getFullYear(),cursor.getMonth()-1,1);renderCalendar()};$('next').onclick=()=>{cursor=new Date(cursor.getFullYear(),cursor.getMonth()+1,1);renderCalendar()};$('todayBtn').onclick=()=>{selectedDay=new Date(today);cursor=new Date(today.getFullYear(),today.getMonth(),1);hasSelectedDate=true;renderCalendar()};$('sidebarToggle').onclick=()=>{$('appShell').classList.toggle('sidebar-collapsed');localStorage.setItem('studyhub-v25-sidebar',$('appShell').classList.contains('sidebar-collapsed')?'1':'0')};if(localStorage.getItem('studyhub-v25-sidebar')==='1')$('appShell').classList.add('sidebar-collapsed');
+setInterval(()=>{todayNow=new Date()},60000);
+renderSubjectColors();
+render();
+</script>
+<script>
+/* StudyHub v2.7 Test 1 calendar engine */
+(function(){
+ const $id=id=>document.getElementById(id);
+ const pad=n=>String(n).padStart(2,'0');
+ const dateKey=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+ const fromKey=k=>new Date(k+'T00:00:00');
+ const clock=t=>{if(!t)return '';let [h,m]=t.split(':').map(Number);return `${h%12||12}${m?':'+pad(m):''}${h>=12?'pm':'am'}`};
+ const addDays=(d,n)=>{let x=new Date(d);x.setDate(x.getDate()+n);return x};
+ const startWeek=d=>{let x=new Date(d);x.setDate(x.getDate()-x.getDay());return x};
+ const SPECIAL_PERIODS=['ES Lab Buffer','Physics Lab Buffer','Study Period','ILP','Lunch','Biology Lab Buffer','No Classes'];
+ const SPECIAL_PERIOD_COLORS={'ES Lab Buffer':'#e6a23c','Physics Lab Buffer':'#8b79cf','Study Period':'#6b9fc9','ILP':'#d58aab','Lunch':'#78a88b','Biology Lab Buffer':'#d28a55','No Classes':'#8b95a7'};
+ const safeColor=s=>SPECIAL_PERIOD_COLORS[s]||(typeof subjectColor==='function'&&s&&s!=='N/A'?subjectColor(s):'#3978e8');
+ const TEMPLATE_KEY='studyhub-v273-schedule-templates', ASSIGN_KEY='studyhub-v273-date-schedules';
+ let templates=[];try{templates=JSON.parse(localStorage.getItem(TEMPLATE_KEY)||'[]');if(!Array.isArray(templates))templates=[]}catch{templates=[]}
+ let dayAssignments={};try{dayAssignments=JSON.parse(localStorage.getItem(ASSIGN_KEY)||'{}')}catch{dayAssignments={}}
+ let editingTemplateId='', periodDraft=[];
+ const saveTemplates=()=>localStorage.setItem(TEMPLATE_KEY,JSON.stringify(templates));
+ const templateForDate=d=>{const id=dayAssignments[dateKey(d)];return id?templates.find(t=>t.id===id)||null:null};
+ const scheduledEntries=d=>{
+  const t=templateForDate(d);if(!t)return [];
+  if((t.periods||[]).some(p=>p.subject==='No Classes'))return [{id:`template:${dateKey(d)}:no-classes`,title:'NO CLASSES',subject:'No Classes',entryType:'templateSchedule',allDay:true,templateId:t.id,templateEntryId:'no-classes',templateDate:dateKey(d)}];
+  return (t.periods||[]).map(p=>({...p,id:`template:${dateKey(d)}:${p.id}`,title:p.subject,subject:p.subject,entryType:'templateSchedule',startTime:p.start,endTime:p.end,templateId:t.id,templateEntryId:p.id,templateDate:dateKey(d)}));
+ };
+ const dateItems=d=>dayItems(d).filter(a=>a.entryType!=='gradeTask').concat(scheduledEntries(d));
+ let mode='month', anchor=new Date(selectedDay), activeDate=new Date(selectedDay);
+ anchor.setDate(1);
+ const viewSelect=$id('calendarViewSelect');
+ const monthBox=$id('monthCalendar'), timelineBox=$id('mainTimeline');
+ function setMode(m){mode=m;viewSelect.value=m;if(m==='day'||m==='week')anchor=new Date(activeDate);render(); }
+ function goToday(){anchor=new Date(today.getFullYear(),today.getMonth(),1);activeDate=new Date(today);selectedDay=new Date(today);hasSelectedDate=false;render()}
+ function move(n){if(mode==='month')anchor=new Date(anchor.getFullYear(),anchor.getMonth()+n,1);else anchor=addDays(anchor,n*(mode==='week'?7:1));activeDate=new Date(anchor);selectedDay=new Date(activeDate);render()}
+ function monthTitle(){return anchor.toLocaleDateString(undefined,{month:'long',year:'numeric'})}
+ function renderMonth(){
+  monthBox.style.display='block';timelineBox.style.display='none';
+  $id('monthLabel').textContent=monthTitle();
+  const first=new Date(anchor.getFullYear(),anchor.getMonth(),1),gridStart=startWeek(first);
+  let cells='';
+  for(let i=0;i<42;i++){
+   const d=addDays(gridStart,i),arr=dateItems(d).filter(a=>a.entryType==='task'||a.entryType==='assessment'),allDay=[],timed=arr;
+   const bars=[
+    ...allDay.map(a=>`<div class="month-eventbar" style="--bar:${a.entryType==='holiday'?'#9864cf':'#13834f'}" data-edit="${esc(a.id)}">${esc(a.title)}</div>`),
+    ...timed.map(a=>a.entryType==='templateSchedule'?`<div class="month-template-event" style="background:color-mix(in srgb,${safeColor(a.subject)} 18%,white);color:#20314c;border-left:3px solid ${safeColor(a.subject)}" data-template-entry="${esc(a.templateEntryId)}" data-template-date="${dateKey(d)}" data-template-subject="${esc(a.subject)}">${clock(a.startTime)} ${esc(a.subject)}</div>`:`<div class="month-eventbar timed" style="--bar:${safeColor(a.subject)}" data-edit="${esc(a.id)}"><span class="month-time">${a.startTime?clock(a.startTime)+' ':''}</span>${esc(a.title)}</div>`)
+   ];
+   const max=4,shown=bars.slice(0,max).join(''),more=bars.length>max?`<div class="month-more">+${bars.length-max} more</div>`:'';
+   cells+=`<button class="calday ${d.getMonth()!==anchor.getMonth()?'other':''} ${dateKey(d)===dateKey(today)?'today':''}" data-open-day="${dateKey(d)}"><div class="daycellhead"><span class="daynum">${d.getDate()}</span></div><div class="month-eventbars">${shown}${more}</div></button>`;
+  }
+  $id('calGrid').innerHTML=cells;
+  $id('calGrid').querySelectorAll('[data-open-day]').forEach(b=>b.addEventListener('click',e=>{
+   const templateEvent=e.target.closest('[data-template-entry]');if(templateEvent){e.stopPropagation();openTemplateChoice(templateEvent.dataset.templateSubject,templateEvent.dataset.templateDate);return}
+   const event=e.target.closest('[data-edit]');
+   if(event){e.stopPropagation();const item=items.find(x=>x.id===event.dataset.edit);if(item)openModal(item);return}
+   activeDate=fromKey(b.dataset.openDay);selectedDay=new Date(activeDate);hasSelectedDate=true;renderDayPopup();
+  }));
+ }
+ function closeActivityPopup(){const pop=$id('activityPopup');if(pop){pop.classList.remove('show');pop.setAttribute('aria-hidden','true')}activityPopupId=null}
+ let activityPopupId=null;
+ function showActivityPopup(id){const a=items.find(x=>x.id===id);if(!a)return;activityPopupId=id;$id('activityPopupTitle').textContent=a.title||'Untitled activity';$id('activityPopupMeta').textContent=[a.subject&&a.subject!=='N/A'?a.subject:'Activity',a.startTime?clock(a.startTime)+(a.endTime?' – '+clock(a.endTime):''):'No time set',a.due?fromKey(a.due).toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}):''].filter(Boolean).join(' · ');$id('activityPopupDetails').textContent=a.notes||'No details added.';$id('activityPopup').classList.add('show');$id('activityPopup').setAttribute('aria-hidden','false')}
+ function bindPeriodActivities(root){root.querySelectorAll('[data-period-activity]').forEach(el=>{const toggle=el.querySelector('.period-task-toggle'),edit=el.querySelector('[data-activity-edit]');if(toggle)toggle.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();showActivityPopup(el.dataset.periodActivity)});if(edit)edit.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const a=items.find(x=>x.id===edit.dataset.activityEdit);if(a)openModal(a)})})}
+ function renderTimeGrid(days,standalone=true){
+  const px=96;
+  const cols=days.map(d=>{
+   const arr=dateItems(d),all=arr.filter(a=>a.entryType==='holiday'||a.entryType==='event'||a.allDay===true);
+   const periods=arr.filter(a=>a.entryType==='templateSchedule'&&!a.allDay&&a.startTime);
+   const tasks=arr.filter(a=>a.entryType==='task'||a.entryType==='assessment');
+   const matchedTaskIds=new Set();
+   const periodBlocks=periods.map(p=>{
+    const [sh,sm]=p.start.split(':').map(Number),start=sh*60+(sm||0);
+    const [eh,em]=p.end.split(':').map(Number),end=Math.max(start+15,eh*60+(em||0));
+    const top=start/60*px,height=Math.max(30,(end-start)/60*px),col=safeColor(p.subject);
+    const associated=tasks.filter(t=>t.subject===p.subject&&!matchedTaskIds.has(t.id));
+    associated.forEach(t=>matchedTaskIds.add(t.id));
+    const taskCards=associated.map(t=>`<div class="period-task-chip" data-period-activity="${esc(t.id)}"><button type="button" class="period-task-toggle"><span class="period-task-name">${esc(t.title)}</span></button><button type="button" class="activity-edit" data-activity-edit="${esc(t.id)}" aria-label="Edit activity">✎</button><span class="activity-details">${esc(t.notes||'No details added.')}</span></div>`).join('');
+    return `<div class="schedule-template-block ${p.subject==='No Classes'?'no-classes-block':''}" style="top:${top}px;height:${height}px;left:4px;right:4px;--template-color:${col};--template-ink:${colorInk(col)}" data-template-entry="${esc(p.templateEntryId)}" data-template-date="${dateKey(d)}" data-template-subject="${esc(p.subject)}">
+      <div class="period-block-head"><span class="period-time">${clock(p.start)} – ${clock(p.end)}</span><strong>${esc(p.subject)}</strong></div>
+      ${taskCards?`<div class="period-task-list">${taskCards}</div>`:''}
+    </div>`;
+   }).join('');
+   const standaloneTasks=tasks.filter(t=>!matchedTaskIds.has(t.id)).map(t=>{
+    const time=t.startTime||'08:00',[h,m]=time.split(':').map(Number),top=(h*60+(m||0))/60*px;
+    const col=safeColor(t.subject);
+    return `<div class="gcal-event task" style="top:${top}px;height:48px;left:4px;right:4px;--event-color:${col};--event-bg:${col};--event-ink:${colorInk(col)}" data-edit="${esc(t.id)}"><strong>${esc(t.title)}</strong><small>${t.startTime?clock(t.startTime):'Deadline'}${t.subject&&t.subject!=='N/A'?' · '+esc(t.subject):''}</small></div>`;
+   }).join('');
+   const otherTimed=arr.filter(a=>a.entryType!=='templateSchedule'&&a.entryType!=='task'&&a.entryType!=='assessment'&&a.entryType!=='holiday'&&a.entryType!=='event'&&!a.allDay&&a.startTime).map(a=>{
+    const [h,m]=a.startTime.split(':').map(Number),top=(h*60+(m||0))/60*px;
+    const [eh,em]=String(a.endTime||a.startTime).split(':').map(Number),end=eh*60+(em||0);
+    const height=Math.max(30,((end>h*60+(m||0)?end:h*60+(m||0)+30)-(h*60+(m||0)))/60*px),col=safeColor(a.subject);
+    return `<div class="gcal-event" style="top:${top}px;height:${height}px;left:4px;right:4px;--event-color:${col};--event-bg:${col};--event-ink:${colorInk(col)}" data-edit="${esc(a.id)}"><strong>${esc(a.title)}</strong><small>${clock(a.startTime)}${a.endTime?' – '+clock(a.endTime):''}</small></div>`;
+   }).join('');
+   const allday=all.map(a=>`<div class="gcal-allday-chip" style="background:${a.entryType==='holiday'?'#9864cf':'#13834f'}" data-edit="${esc(a.id)}">${esc(a.title)}</div>`).join('');
+   const noClasses=arr.some(a=>a.entryType==='templateSchedule'&&a.allDay);
+   const noClassesBanner=noClasses?`<div class="gcal-allday-chip no-classes-banner" data-template-entry="no-classes" data-template-date="${dateKey(d)}" data-template-subject="No Classes">NO CLASSES</div>`:'';
+   const isToday=dateKey(d)===dateKey(today);
+   let now='';
+   if(isToday){const nowDate=new Date(),mins=nowDate.getHours()*60+nowDate.getMinutes();now=`<div class="gcal-now" style="top:${mins/60*px}px"></div>`}
+   const header=`<div class="gcal-dayhead ${isToday?'today':''}">${d.toLocaleDateString(undefined,{weekday:'short'}).toUpperCase()}<b>${d.getDate()}</b></div>`;
+   return `<div class="gcal-daycol" data-daycol="${dateKey(d)}">${header}<div class="gcal-allday">${noClassesBanner}${allday}</div><div class="gcal-hours" data-grid-day="${dateKey(d)}">${periodBlocks}${standaloneTasks}${otherTimed}${now}</div></div>`;
+  }).join('');
+  const labels=Array.from({length:24},(_,i)=>`<div class="gcal-hour-label">${i===0?'12 AM':i<12?i+' AM':i===12?'12 PM':(i-12)+' PM'}</div>`).join('');
+  const dayCount=days.length;
+  return `<div class="gcal-timewrap"><div class="gcal-timeaxis"><div class="gcal-timeaxis-head"></div>${labels}</div><div class="gcal-days" style="--day-count:${dayCount}">${cols}</div></div>`;
+ }
+ function renderMainTime(){
+  monthBox.style.display='none';timelineBox.style.display='block';
+  let days=mode==='day'?[new Date(anchor)]:Array.from({length:7},(_,i)=>addDays(startWeek(anchor),i));
+  $id('monthLabel').textContent=mode==='day'?anchor.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric',year:'numeric'}):`${days[0].toLocaleDateString(undefined,{month:'short',day:'numeric'})} – ${days[6].toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'})}`;
+  timelineBox.innerHTML=renderTimeGrid(days);
+  timelineBox.querySelectorAll('[data-edit]').forEach(el=>el.addEventListener('click',e=>{e.stopPropagation();let a=items.find(x=>x.id===el.dataset.edit);if(a)openModal(a)}));
+  bindPeriodActivities(timelineBox);
+  timelineBox.querySelectorAll('[data-template-entry]').forEach(el=>el.addEventListener('click',e=>{e.stopPropagation();openTemplateChoice(el.dataset.templateSubject,el.dataset.templateDate,el.dataset.templateEntry)}));
+  timelineBox.querySelectorAll('[data-grid-day]').forEach(grid=>grid.addEventListener('click',e=>{
+   if(e.target.closest('[data-edit]'))return;
+   const rect=grid.getBoundingClientRect(),y=e.clientY-rect.top+grid.scrollTop;
+   const mins=Math.max(0,Math.min(1439,Math.floor(y/96*60/30)*30)),h=Math.floor(mins/60),m=mins%60;
+   openModal(null,grid.dataset.gridDay,`${pad(h)}:${pad(m)}`);
+  }));
+ }
+ function populateDayScheduleSelect(){
+  const sel=$id('dayScheduleSelect');if(!sel)return;const k=dateKey(activeDate),current=templateForDate(activeDate);
+  sel.innerHTML='<option value="">No schedule assigned</option>'+templates.map(t=>`<option value="${esc(t.id)}">${esc(t.name)}</option>`).join('');
+  sel.value=current?.id||'';
+  sel.onchange=()=>{if(sel.value)dayAssignments[k]=sel.value;else delete dayAssignments[k];localStorage.setItem(ASSIGN_KEY,JSON.stringify(dayAssignments));renderDayPopup();render();};
+ }
+ function renderTemplateManager(){
+  const list=$id('scheduleTemplateList');list.innerHTML=templates.length?templates.map(t=>`<button type="button" class="schedule-template-chip ${t.id===editingTemplateId?'active':''}" data-template-id="${esc(t.id)}">${esc(t.name)}</button>`).join(''):'<span class="schedule-manager-note">No custom schedules yet. Create your first timetable below.</span>';
+  list.querySelectorAll('[data-template-id]').forEach(b=>b.onclick=()=>loadTemplate(b.dataset.templateId));
+ }
+ function periodRow(p={}){const row=document.createElement('div');row.className='schedule-period';row.innerHTML=`<select aria-label="Subject">${['N/A',...SUBJECTS,...SPECIAL_PERIODS].map(s=>`<option ${s===(p.subject||'')?'selected':''}>${esc(s)}</option>`).join('')}</select><input type="time" aria-label="Start time" value="${esc(p.start||'08:00')}"><input type="time" aria-label="End time" value="${esc(p.end||'09:00')}"><button type="button" class="mini del" aria-label="Remove period">×</button>`;const syncNoClasses=()=>{const off=row.children[0].value==='No Classes';row.children[1].disabled=off;row.children[2].disabled=off;if(off){row.children[1].value='00:00';row.children[2].value='23:59'}};row.children[0].addEventListener('change',syncNoClasses);row.querySelector('button').onclick=()=>row.remove();$id('schedulePeriods').appendChild(row);syncNoClasses()}
+ function loadTemplate(id){const t=templates.find(x=>x.id===id);if(!t)return;editingTemplateId=id;$id('scheduleName').value=t.name;$id('schedulePeriods').innerHTML='';(t.periods||[]).forEach(p=>periodRow(p));renderTemplateManager();$id('deleteScheduleTemplate').style.display='inline-flex'}
+ function newTemplate(){editingTemplateId='';$id('scheduleName').value='';$id('schedulePeriods').innerHTML='';periodRow();$id('deleteScheduleTemplate').style.display='none';renderTemplateManager()}
+ function openScheduleManager(){newTemplate();$id('scheduleManager').classList.add('show');$id('scheduleManager').setAttribute('aria-hidden','false')}
+ function closeScheduleManager(){$id('scheduleManager').classList.remove('show');$id('scheduleManager').setAttribute('aria-hidden','true')}
+ function saveScheduleManager(){const name=$id('scheduleName').value.trim();if(!name){toast('Give this schedule a name.');return}const periods=[...$id('schedulePeriods').children].map(row=>({id:String(Date.now())+Math.random().toString(16).slice(2),subject:row.children[0].value,start:row.children[0].value==='No Classes'?'00:00':row.children[1].value,end:row.children[0].value==='No Classes'?'23:59':row.children[2].value}));if(!periods.length||periods.some(p=>p.subject!=='No Classes'&&(!p.start||!p.end||p.end<=p.start))){toast('Add valid class periods with start and end times.');return}let id=editingTemplateId||('sched-'+Date.now());const old=templates.find(t=>t.id===id);templates=templates.filter(t=>t.id!==id);templates.push({id,name,days:old?.days||[],periods});saveTemplates();renderTemplateManager();newTemplate();render();if($id('dayDetail').classList.contains('open'))renderDayPopup();toast('Daily schedule saved.')}
+ let choiceContext=null,activityContext=null;
+ function openTemplateChoice(subject,date,templateEntryId=null){
+  const d=fromKey(date),tpl=templateForDate(d),period=(tpl?.periods||[]).find(p=>String(p.id)===String(templateEntryId));
+  const ctx={subject:SUBJECTS.includes(subject)?subject:'N/A',date,start:period?.start||'08:00',end:period?.end||'09:00'};
+  openModal(null,date,ctx.start);activityContext=ctx;
+  const bg=$id('modalbg');bg.classList.add('activity-context');
+  $id('modalTitle').textContent='Add activity · '+subject;
+  $id('entryType').value='task';$id('endTime').required=false;$id('subject').value=ctx.subject;
+  $id('startTime').value=ctx.start;$id('endTime').value=ctx.end;
+  $id('dueDate').value=date;$id('due').value=date;
+  $id('notes').placeholder='Add activity details…';
+  bg.querySelectorAll('.editor-row').forEach(r=>{
+   if(r.querySelector('#dueDate,#repeatMode,#startTime,#endTime,#subject,#assessmentScheduled,#graded'))r.classList.add('activity-hide');
+   if(r.querySelector('#notes'))r.classList.add('activity-notes');
+  });
+  document.querySelectorAll('[data-entry-tab]').forEach(b=>b.classList.remove('active'));
+ }
+ function closeTemplateChoice(){$id('templateTaskChoice').classList.remove('show');choiceContext=null}
+ function addFromTemplate(kind){if(!choiceContext)return;const c={...choiceContext};closeTemplateChoice();openModal(null,c.date);$id('entryType').value='task';$id('endTime').required=false;document.querySelectorAll('[data-entry-tab]').forEach(b=>b.classList.toggle('active',b.dataset.entryTab==='task'));$id('subject').value=SUBJECTS.includes(c.subject)?c.subject:'N/A';$id('assessmentScheduled').checked=kind==='assessment';$id('graded').checked=kind==='assessment';$id('title').value=kind==='assessment'?'': ''; $id('title').placeholder=kind==='assessment'?'e.g. Filipino Quiz':'e.g. Filipino submission';updateColorPreview();}
+ function render(){
+  cursor=anchor;selectedDay=activeDate;
+  if(mode==='month')renderMonth();else renderMainTime();
+ }
+ function renderDayPopup(){
+  const overlay=$id('dayDetail');overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');
+  $id('dayTitle').textContent=activeDate.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+  // The day popup's timeline is hidden by default in CSS. Explicitly show it
+  // whenever the popup is rendered, including after a schedule is assigned.
+  $id('weekCalendar').style.display='block';
+  $id('weekCalendar').innerHTML=renderTimeGrid([activeDate]);
+  $id('dayList').innerHTML='';
+  $id('weekCalendar').querySelectorAll('[data-edit]').forEach(el=>el.addEventListener('click',e=>{e.stopPropagation();const a=items.find(x=>x.id===el.dataset.edit);if(a)openModal(a)}));
+  bindPeriodActivities($id('weekCalendar'));
+  $id('weekCalendar').querySelectorAll('[data-template-entry]').forEach(el=>el.addEventListener('click',e=>{if(e.target.closest('[data-edit]'))return;e.stopPropagation();openTemplateChoice(el.dataset.templateSubject,el.dataset.templateDate,el.dataset.templateEntry)}));
+  populateDayScheduleSelect();
+  $id('weekCalendar').querySelectorAll('[data-grid-day]').forEach(grid=>grid.addEventListener('click',e=>{
+   if(e.target.closest('[data-edit]'))return;
+   const rect=grid.getBoundingClientRect(),y=e.clientY-rect.top+grid.scrollTop,mins=Math.max(0,Math.min(1439,Math.floor(y/96*60/30)*30));
+   openModal(null,grid.dataset.gridDay,`${pad(Math.floor(mins/60))}:${pad(mins%60)}`);
+  }));
+ }
+ function closeDay(){ $id('dayDetail').classList.remove('open');$id('dayDetail').setAttribute('aria-hidden','true');hasSelectedDate=false }
+ function openModalV2(a=null,date=null,time=''){
+  openModalBase(a,date,time);
+ }
+ const openModalBase=window.openModal || openModal;
+ function openModal(a=null,date=null,time=''){
+  if(!activityContext||a){activityContext=null;$id('modalbg').classList.remove('activity-context')}
+  $id('activityForm').reset();
+  $id('editId').value=a?.id||'';
+  $id('modalTitle').textContent=a?'Edit':'Create';
+  $id('deleteEntryBtn').style.display=a?'inline-flex':'none';
+  $id('title').value=a?.title||'';
+  $id('subject').value=a?.subject||'N/A';
+  $id('entryType').value=a?.entryType==='schedule'?'schedule':'task';
+  $id('endTime').required=$id('entryType').value==='schedule';
+  document.querySelectorAll('[data-entry-tab]').forEach(b=>b.classList.toggle('active',b.dataset.entryTab===$id('entryType').value));
+  $id('repeatMode').value=a?.repeatMode||'once';
+  const dateValue=date||a?.due||dateKey(activeDate);
+  $id('dueDate').value=dateValue;
+  $id('due').value=dateValue;
+  $id('startTime').value=a?.startTime||time||'08:00';
+  $id('endTime').value=a?.endTime||(a?.entryType==='schedule'?'09:00':'');
+  $id('notes').value=a?.notes||'';
+  $id('assessmentScheduled').checked=!!a?.assessmentScheduled;
+  $id('graded').checked=!!a?.gradeTask;
+  $id('weight').value=a?.weight??0;$id('score').value=a?.score??'';$id('maxScore').value=a?.maxScore??'';$id('status').value=a?.status||'pending';
+  updateColorPreview();
+  $id('modalbg').classList.add('show');
+  setTimeout(()=>$id('title').focus(),30);
+ }
+ window.openModal=openModal;
+ function updateColorPreview(){
+  const col=safeColor($id('subject').value),p=$id('entryColorPreview');
+  p.style.background=col+'24';p.style.color=colorInk(col);p.textContent=$id('subject').value==='N/A'?'Default calendar color':$id('subject').value+' color';
+ }
+ function saveCalendarEntry(e){
+  e.preventDefault();
+  const type=$id('entryType').value,st=$id('startTime').value,en=$id('endTime').value,due=$id('dueDate').value;
+  if(!$id('title').value.trim()){toast('Add a title first.');$id('title').focus();return}
+  if(!due){toast('Choose a date.');return}
+  if(!st||(type==='schedule'&&(!en||en<=st))){toast(type==='schedule'?'Choose valid start and end times.':'Choose a deadline time.');$id('startTime').focus();return}
+  const id=$id('editId').value||String(Date.now())+Math.random().toString(16).slice(2),old=items.find(x=>x.id===id);
+  const ctx=activityContext;const entry={...(old||{}),id,title:$id('title').value.trim(),subject:ctx?.subject||$id('subject').value||'N/A',entryType:type,repeatMode:ctx?'once':$id('repeatMode').value,repeatDays:[],due,startTime:ctx?.start||st,endTime:ctx?.end||en,assessmentScheduled:$id('assessmentScheduled').checked,gradeTask:ctx?true:$id('graded').checked,category:$id('assessmentScheduled').checked?'Class Assessment':'Task',platform:'None',topic:'',weight:old?.weight??0,difficulty:'',score:old?.score??'',maxScore:old?.maxScore??'',status:old?.status||'pending',notes:$id('notes').value.trim()};
+  const idx=items.findIndex(x=>x.id===id);if(idx>=0)items[idx]=entry;else items.push(entry);
+  localStorage.setItem(STORE,JSON.stringify(items));
+  $id('modalbg').classList.remove('show','activity-context');activityContext=null;
+  activeDate=fromKey(due);selectedDay=new Date(activeDate);anchor=mode==='month'?new Date(activeDate.getFullYear(),activeDate.getMonth(),1):new Date(activeDate);
+  render();renderProgress();renderTable();
+  if($id('dayDetail').classList.contains('open'))renderDayPopup();
+  toast(idx>=0?'Calendar entry updated.':'Calendar entry saved.');
+ }
+ // Export a clean image that mirrors the on-screen timetable layout.
+ function exportScheduleImage(){
+  const from=$id('exportFrom').value,to=$id('exportTo').value;
+  if(!from||!to||to<from){toast('Choose a valid date range.');return}
+  const dates=[];let d=fromKey(from),last=fromKey(to);while(d<=last&&dates.length<=31){dates.push(new Date(d));d.setDate(d.getDate()+1)}
+  if(dates.length>31){toast('Please export 31 days or fewer at once.');return}
+  const parse=v=>{const [h,m]=String(v||'00:00').split(':').map(Number);return h*60+(m||0)};
+  const fmt=n=>{const h=Math.floor(n/60),m=n%60;return `${h%12||12}:${String(m).padStart(2,'0')} ${h<12?'AM':'PM'}`};
+  const panels=dates.map(day=>{
+   const arr=dateItems(day),periods=arr.filter(a=>a.entryType==='templateSchedule'&&!a.allDay&&a.start),tasks=arr.filter(a=>a.entryType==='task'||a.entryType==='assessment');
+   const matched=new Set();
+   const blocks=periods.map(period=>{
+    const associated=tasks.filter(t=>t.subject===period.subject&&!matched.has(t.id));associated.forEach(t=>matched.add(t.id));
+    return {kind:'period',start:parse(period.start),end:Math.max(parse(period.start)+15,parse(period.end||period.start)),subject:period.subject,tasks:associated};
+   });
+   tasks.filter(t=>!matched.has(t.id)).forEach(t=>{const st=parse(t.startTime||'08:00');blocks.push({kind:'task',start:st,end:Math.max(st+30,parse(t.endTime||t.startTime||'08:30')),subject:t.subject||'N/A',title:t.title,notes:t.notes||''})});
+   const noClasses=arr.some(a=>a.entryType==='templateSchedule'&&a.allDay);
+   if(!blocks.length)return {day,blocks,noClasses,start:7*60+20,end:9*60};
+   return {day,blocks,noClasses,start:Math.max(0,Math.min(...blocks.map(b=>b.start))-10),end:Math.min(1440,Math.max(...blocks.map(b=>b.end))+10)};
+  });
+  const width=1400,gutter=105,right=34,scale=1.6,header=76,outer=26,dayGap=28;
+  const panelHeights=panels.map(p=>header+Math.max(100,(p.end-p.start)*scale)+outer);
+  const height=outer+panelHeights.reduce((a,b)=>a+b,0)+dayGap*(panels.length-1);
+  const canvas=document.createElement('canvas');canvas.width=width;canvas.height=Math.ceil(height);
+  const c=canvas.getContext('2d');c.fillStyle='#f3f6fb';c.fillRect(0,0,width,canvas.height);
+  const rounded=(x,y,w,h,r)=>{c.beginPath();c.roundRect(x,y,w,h,r)};const mixColor=(hex,amount=.30)=>{const n=parseInt(hex.slice(1),16),r=(n>>16)&255,g=(n>>8)&255,b=n&255;const f=v=>Math.round(v*(1-amount)+255*amount);return `rgb(${f(r)},${f(g)},${f(b)})`};
+  const fit=(text,max,font)=>{c.font=font;let value=String(text||'');while(value.length>1&&c.measureText(value).width>max)value=value.slice(0,-2)+'…';return value};const wrapCanvasText=(ctx,text,max,font)=>{ctx.font=font;const out=[];let line='';String(text||'Untitled activity').split(/\s+/).forEach(word=>{const test=line?line+' '+word:word;if(line&&ctx.measureText(test).width>max){out.push(line);line=word}else line=test});if(line)out.push(line);return out};
+  let y=outer;
+  panels.forEach(p=>{
+   const bodyH=Math.max(100,(p.end-p.start)*scale),ph=header+bodyH+outer;
+   c.fillStyle='#fff';c.shadowColor='#1b355018';c.shadowBlur=14;rounded(outer,y,width-outer*2,ph,12);c.fill();c.shadowBlur=0;
+   c.fillStyle='#1d3153';c.font='bold 27px Arial';c.fillText(p.day.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric',year:'numeric'}),outer+24,y+43);
+   const gx=gutter,gw=width-gutter-right,gy=y+header;
+   for(let t=Math.ceil(p.start/30)*30;t<=p.end;t+=30){
+    const yy=gy+(t-p.start)*scale;c.strokeStyle=t%60===0?'#e5eaf1':'#f1f4f8';c.lineWidth=t%60===0?1:0.7;c.beginPath();c.moveTo(gx,yy);c.lineTo(gx+gw,yy);c.stroke();
+    c.fillStyle='#64748b';c.font='13px Arial';c.textAlign='left';c.fillText(fmt(t),outer+22,yy+4);
+   }
+   if(p.noClasses){c.fillStyle='#68778d';c.font='bold 23px Arial';c.fillText('NO CLASSES',gx+18,gy+40)}
+   p.blocks.forEach(b=>{
+    const yy=gy+(b.start-p.start)*scale,hh=Math.max(26,(b.end-b.start)*scale),col=safeColor(b.subject),x=gx+5,w=gw-5;
+    if(b.kind==='period'){
+     c.fillStyle=mixColor(col,.30);rounded(x,yy,w,hh,9);c.fill();c.strokeStyle='#111';c.lineWidth=1.5;c.stroke();c.fillStyle=col;c.fillRect(x,yy,5,hh);
+     c.fillStyle='#52627a';c.font='12px Arial';c.textAlign='left';c.fillText(`${fmt(b.start)} – ${fmt(b.end)}`,x+14,yy+18);
+     c.fillStyle='#000000';c.font='bold 15px Arial';c.textAlign='right';c.fillText(fit(b.subject,w-35,'bold 15px Arial'),x+w-14,yy+18);c.textAlign='left';
+     let chipX=x+14,chipY=yy+27,rowHeight=25;const maxX=x+w-12,gap=7,baseFont='bold 12px Arial';
+     const wrapText=(value,maxWidth,font)=>{c.font=font;const words=String(value||'').split(/\s+/);const lines=[];let line='';words.forEach(word=>{const test=line?line+' '+word:word;if(line&&c.measureText(test).width>maxWidth){lines.push(line);line=word}else line=test});if(line)lines.push(line);return lines.length?lines:['']};
+     b.tasks.forEach(t=>{
+      const label=String(t.title||'Untitled activity'),available=maxX-(x+14);c.font=baseFont;
+      const natural=c.measureText(label).width+34,chipW=Math.min(available,Math.max(70,natural)),textW=chipW-30;
+      const lines=wrapText(label,textW,baseFont),chipH=Math.max(25,lines.length*15+10);
+      if(chipX+chipW>maxX&&chipX>x+14){chipX=x+14;chipY+=rowHeight+6;rowHeight=25}
+      c.fillStyle='#fff';c.strokeStyle=col+'aa';c.lineWidth=1;rounded(chipX,chipY,chipW,chipH,6);c.fill();c.stroke();
+      c.fillStyle='#25344d';c.font=baseFont;lines.forEach((line,i)=>c.fillText(line,chipX+8,chipY+16+i*15));
+      c.fillStyle='#245bd1';c.font='bold 12px Arial';c.fillText('✎',chipX+chipW-17,chipY+16);
+      rowHeight=Math.max(rowHeight,chipH);chipX+=chipW+gap;
+     });
+    }else{
+     // Unmatched activities stay as compact textboxes; their duration must not expand the timetable.
+     const boxY=yy+3,boxH=42,boxX=x+12,boxW=w-24;
+     c.fillStyle='#fff';c.strokeStyle=col;c.lineWidth=1.5;rounded(boxX,boxY,boxW,boxH,7);c.fill();c.stroke();
+     c.fillStyle='#24344d';c.font='bold 12px Arial';c.textAlign='left';
+     const titleLines=wrapCanvasText(c,b.title,boxW-38,'bold 12px Arial');titleLines.slice(0,2).forEach((line,i)=>c.fillText(line,boxX+10,boxY+16+i*14));
+     c.fillStyle='#68778d';c.font='10px Arial';c.fillText(`${fmt(b.start)} · ${b.subject}`,boxX+10,boxY+36);
+     c.fillStyle='#245bd1';c.font='bold 13px Arial';c.textAlign='right';c.fillText('✎',boxX+boxW-9,boxY+16);c.textAlign='left';
+    }
+   });
+   y+=ph+dayGap;
+  });
+  canvas.toBlob(blob=>{if(!blob){toast('Could not create the schedule image.');return}const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`StudyHub-Schedule-${from}${from===to?'':'-to-'+to}.png`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);$id('exportScheduleModal').classList.remove('show');toast('Schedule picture saved.')},'image/png');
+ }
+ // Rewire toolbar and modal actions.
+ $id('customizeSchedules').onclick=openScheduleManager;
+ $id('exportSchedule').onclick=()=>{$id('exportFrom').value=dateKey(activeDate);$id('exportTo').value=dateKey(activeDate);$id('exportScheduleModal').classList.add('show');$id('exportScheduleModal').setAttribute('aria-hidden','false')};
+ const closeExport=()=>{$id('exportScheduleModal').classList.remove('show');$id('exportScheduleModal').setAttribute('aria-hidden','true')};
+ $id('closeExportSchedule').onclick=$id('cancelExportSchedule').onclick=closeExport;$id('downloadSchedulePicture').onclick=exportScheduleImage;$id('exportScheduleModal').onclick=e=>{if(e.target===$id('exportScheduleModal'))closeExport()};$id('newScheduleTemplate').onclick=newTemplate;$id('closeScheduleManager').onclick=$id('cancelScheduleManager').onclick=closeScheduleManager;
+ $id('scheduleManager').onclick=e=>{if(e.target===$id('scheduleManager'))closeScheduleManager()};
+ $id('addSchedulePeriod').onclick=()=>periodRow();$id('saveScheduleTemplate').onclick=saveScheduleManager;$id('deleteScheduleTemplate').onclick=()=>{if(!editingTemplateId)return;templates=templates.filter(t=>t.id!==editingTemplateId);Object.keys(dayAssignments).forEach(k=>{if(dayAssignments[k]===editingTemplateId)delete dayAssignments[k]});saveTemplates();localStorage.setItem(ASSIGN_KEY,JSON.stringify(dayAssignments));newTemplate();render();if($id('dayDetail').classList.contains('open'))renderDayPopup();toast('Schedule removed.')};
+ $id('templateAddAssessment').onclick=()=>addFromTemplate('assessment');$id('templateAddSubmission').onclick=()=>addFromTemplate('submission');$id('templateChoiceCancel').onclick=closeTemplateChoice;$id('templateTaskChoice').onclick=e=>{if(e.target===$id('templateTaskChoice'))closeTemplateChoice()};
+ $id('calendarViewSelect').addEventListener('change',e=>setMode(e.target.value));
+ $id('prev').onclick=()=>move(-1);$id('next').onclick=()=>move(1);$id('todayBtn').onclick=goToday;
+ $id('calendarAdd').onclick=()=>openModal(null,dateKey(activeDate));
+ $id('dayAdd').onclick=()=>openModal(null,dateKey(activeDate));
+ $id('closeDay').onclick=closeDay;
+ $id('dayDetail').onclick=e=>{if(e.target===$id('dayDetail'))closeDay()};
+ document.querySelectorAll('[data-entry-tab]').forEach(b=>b.onclick=()=>{
+  $id('entryType').value=b.dataset.entryTab;
+  $id('endTime').required=b.dataset.entryTab==='schedule';
+  document.querySelectorAll('[data-entry-tab]').forEach(x=>x.classList.toggle('active',x===b));
+ });
+ $id('closeActivityPopup').onclick=$id('activityPopupClose').onclick=closeActivityPopup;$id('activityPopup').onclick=e=>{if(e.target===$id('activityPopup'))closeActivityPopup()};$id('activityPopupEdit').onclick=()=>{const a=items.find(x=>x.id===activityPopupId);closeActivityPopup();if(a)openModal(a)};
+ $id('subject').addEventListener('change',updateColorPreview);
+ $id('dueDate').addEventListener('change',e=>$id('due').value=e.target.value);
+ $id('activityForm').onsubmit=saveCalendarEntry;
+ $id('deleteEntryBtn').onclick=()=>{const id=$id('editId').value;if(id)showDeleteConfirm(id)};
+ $id('close').onclick=$id('cancel').onclick=()=>$id('modalbg').classList.remove('show');
+ $id('modalbg').onclick=e=>{if(e.target===$id('modalbg'))$id('modalbg').classList.remove('show')};
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){if($id('activityPopup').classList.contains('show'))closeActivityPopup();else if($id('exportScheduleModal').classList.contains('show'))closeExport();else if($id('templateTaskChoice').classList.contains('show'))closeTemplateChoice();else if($id('scheduleManager').classList.contains('show'))closeScheduleManager();else if($id('modalbg').classList.contains('show'))$id('modalbg').classList.remove('show');else closeDay()}});
+ // Ensure legacy Add buttons use the redesigned editor.
+ $id('addTop').onclick=()=>openModal(null,dateKey(activeDate));
+ window.studyHubCalendarV27={render,setMode,openModal};
+ render();
+})();
+</script>
+
+</body></html>
